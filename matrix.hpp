@@ -6,47 +6,77 @@
 #include<fstream>
 using namespace std;
 
+/**A boolean variable to toggle the extra couts.*/
+bool verbose=false;
+
 /**
- * A library to perform operations on matrices.
- * */
+ * @class A library to perform operations on matrices.
+*/
 class Matrix
 {
 private:
+
     /**
      * @var rows is a private data member which contains the number of rows of the matrix.
      * @var cols is a private data member which contains the number of columns of the matrix.
-     * */
+    */
     ulong rows, cols;
 
-    /**
-     * **matrix is a private data member which points to a 2D array which contains the matrix elements.*/
+    /** **matrix is a private data member which points to a 2D array which contains the matrix elements.*/
     double **matrix;
 
 public:
     /**
      * Default constructor.
      * Initialises values of rows and cols to 0.
-     * */
+    */
     Matrix();
 
     /**
      * Parameterized constructor.
-     * @param rows is of the type unsigned long, used to initialise the @var rows.
-     * @param cols is of the type unsigned long, used to initialise the @var cols.
-     * Memory is allocated to the @var **matrix pointer.*/
+     * Memory is allocated to the member **matrix pointer.
+     * The matrix elements are initialized to 0.
+     * @param rows is of the type unsigned long, used to initialise the member rows.
+     * @param cols is of the type unsigned long, used to initialise the member cols.
+    */
     Matrix(ulong rows, ulong cols);
 
+    /**
+     * Copy constructor.
+     * The contents of the object received in the argument list are copied to the current objects memory.
+     * @param matrixToBeCopied is a reference to another object of the Matrix class.
+    */
+    Matrix(const Matrix &matrixToBeCopied);
+
+    /** Destructor. */
+    virtual ~Matrix();
+
     /** Getter for @var rows.*/
-    ulong getRows() const;
+    ulong getRows();
 
     /** Setter for @var rows.*/
     void setRows(ulong rows);
 
     /** Getter for @var cols.*/
-    ulong getCols() const;
+    ulong getCols();
 
     /** Setter for @var cols.*/
     void setCols(ulong cols);
+
+    /** Returns true of matrix exists else false.*/
+    bool exists();
+
+    /** Display the matrix.*/
+    void displayMatrix();
+
+    /**
+     * Overlaoded the operator '=' to assign elements of one matrix to another.
+     * @param matrixToBeAssigned is a reference to another object of the Matrix class.
+    */
+    Matrix operator=(const Matrix &matrixToBeAssigned);
+
+    /** Assigns random values to the matrix if exists.*/
+    void generateRandomMatrix();
 };
 
 #endif
