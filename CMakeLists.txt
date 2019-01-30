@@ -3,4 +3,6 @@ project(Matrix)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_library(Matrix matrix.cpp matrix.hpp)
+add_library(Matrix matrix.cpp matrix.hpp main.cpp)
+
+add_executable(mat matrix.cpp main.cpp)

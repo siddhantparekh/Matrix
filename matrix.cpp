@@ -76,11 +76,14 @@ ulong Matrix::getRows()
 
 void Matrix::setRows(ulong rows)
 {
-    if(verbose)
-        cout<<"In setter setRows.\n";
+    if (verbose)
+        cout << "In setter setRows.\n";
 
-    if(this->exists())
+    if (!this->exists())
+    {
         this->rows = rows;
+        this->
+    }
 }
 
 ulong Matrix::getCols()
@@ -97,7 +100,7 @@ void Matrix::setCols(ulong cols)
     if(verbose)
         cout<<"In setter setCols.\n";
 
-    if(this->exists())
+    if(!this->exists())
         this->cols = cols;
 }
 
@@ -105,14 +108,17 @@ bool Matrix::exists()
 {
     if(verbose)
         cout<<"In function exists().\n";
-    return !(rows < 1 || cols < 1);
+
+    return (this->rows > 0 && this->cols > 0);
 }
 
 void Matrix::displayMatrix()
 {
     if(verbose)
-        cout<<"In function display().\n";
+        cout<<"In function displayMatrix().\n";
 
+    cout<<"Rows : "<<rows<<endl;
+    cout<<"Columns : "<<cols<<endl;
     if(this->exists())
     {
         for (ulong i = 0; i < this->rows; i++)

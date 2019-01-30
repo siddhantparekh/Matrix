@@ -2,12 +2,12 @@
 #define MATRIX_LIBRARY_HPP
 
 #include <iostream>
-#include<cstdlib>
-#include<fstream>
+#include <cstdlib>
+#include <fstream>
 using namespace std;
 
 /**A boolean variable to toggle the extra couts.*/
-bool verbose=false;
+static bool verbose=true;
 
 /**
  * @class A library to perform operations on matrices.
