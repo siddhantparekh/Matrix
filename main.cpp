@@ -1,21 +1,33 @@
 //
-// Created by siddhant on 31/1/19.
+// Created by Siddhant on 31/1/19.
 //
 
 #include "matrix.hpp"
 
 int main()
 {
-    Matrix m1;
+    Matrix *m1;
     ulong rows, cols;
+    string fname;
 
+    // Get rows and cols from the user.
     cout<<"Enter rows and cols : ";
     cin>>rows>>cols;
 
-    m1.setRows(rows);
-    m1.setCols(cols);
+    // Create an object of type Matrix.
+    m1 = new Matrix(rows, cols);
 
-    m1.generateRandomMatrix();
+    // To get rid of the character in the buffer.
+    getchar();
 
-    m1.displayMatrix();
+    // Get the file name from the user.
+    cout<<"Enter file name : ";
+    getline(cin, fname);
+
+    // Read the file provided by the user.
+    m1->readMatrixFromFile(fname);
+
+    m1->displayMatrix();
+
+    return 0;
 }

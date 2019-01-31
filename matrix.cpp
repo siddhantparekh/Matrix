@@ -14,12 +14,14 @@ Matrix::Matrix(ulong rows, ulong cols) : rows(rows), cols(cols)
     if(verbose)
         cout<<"In parameterised constructor.\n";
 
+    //Request to allocate memory
     this->matrix = new double*[this->rows];
     for(ulong i=0; i<this->rows; i++)
         this->matrix[i] = new double[this->cols];
     if(verbose)
         cout<<"Memory allocated.\n";
 
+    //Initialising matrix elements to 0
     for(ulong i=0; i<this->rows; i++)
         for(ulong j=0; j<this->cols; j++)
             this->matrix[i][j] = 0;
@@ -32,15 +34,18 @@ Matrix::Matrix(const Matrix &matrixToBeCopied)
     if(verbose)
         cout<<"In copy constructor.\n";
 
+    //Initialising members rows & cols
     this->rows = matrixToBeCopied.rows;
     this->cols = matrixToBeCopied.cols;
 
+    //Request to allocate memory
     this->matrix = new double*[this->rows];
     for(ulong i=0; i<this->rows; i++)
         this->matrix[i] = new double[this->cols];
     if(verbose)
         cout<<"Memory allocated.\n";
 
+    //Copying matrix elements from argument object
     for(ulong i=0; i<this->rows; i++)
         for(ulong j=0; j<this->cols; j++)
             this->matrix[i][j] = matrixToBeCopied.matrix[i][j];
@@ -53,6 +58,7 @@ Matrix::~Matrix()
     if(verbose)
         cout<<"In destructor.\n";
 
+    //Request to de link memory.
     if(this->exists())
     {
         for (ulong i = 0; i < this->rows; i++)
@@ -74,18 +80,6 @@ ulong Matrix::getRows()
         return rows;
 }
 
-void Matrix::setRows(ulong rows)
-{
-    if (verbose)
-        cout << "In setter setRows.\n";
-
-    if (!this->exists())
-    {
-        this->rows = rows;
-        this->
-    }
-}
-
 ulong Matrix::getCols()
 {
     if(verbose)
@@ -93,15 +87,6 @@ ulong Matrix::getCols()
 
     if(this->exists())
         return cols;
-}
-
-void Matrix::setCols(ulong cols)
-{
-    if(verbose)
-        cout<<"In setter setCols.\n";
-
-    if(!this->exists())
-        this->cols = cols;
 }
 
 bool Matrix::exists()
@@ -119,15 +104,18 @@ void Matrix::displayMatrix()
 
     cout<<"Rows : "<<rows<<endl;
     cout<<"Columns : "<<cols<<endl;
+
     if(this->exists())
     {
         for (ulong i = 0; i < this->rows; i++)
         {
             for (ulong j = 0; j < this->cols; j++)
-                cout << this->matrix[i][j] << " ";
-            cout << endl;
+                cout<<this->matrix[i][j]<<" ";
+            cout<<endl;
         }
     }
+    else
+        cout<<"Matrix does not exist.\n";
 }
 
 Matrix Matrix::operator=(const Matrix &matrixToBeAssigned)
@@ -157,10 +145,64 @@ void Matrix::generateRandomMatrix()
     {
         for (ulong i = 0; i < this->rows; i++)
             for (ulong j = 0; j < this->cols; j++)
-                this->matrix[i][j] = random() % 100;
+                this->matrix[i][j] = random()%100;
     }
 
     if(verbose)
         cout<<"Random values assigned successfully.\n";
 
+}
+
+void Matrix::readMatrixFromFile(const string &fname)
+{
+    if(verbose)
+        cout<<"In function readMatrixFromFile().\n";
+
+    ifstream infile;
+    infile.open(fname);
+
+    ulong rows, cols;
+
+    if(infile)
+    {
+        infile>>rows>>cols;
+        if(this->rows == rows && this->cols == cols)
+        {
+            for(ulong i=0; i<this->rows; i++)
+                for(ulong j=0; j<this->cols; j++)
+                    infile>>this->matrix[i][j];
+        }
+        else
+            cout<<"Invalid rows and columns.\n";
+
+        infile.close();
+    }
+    else
+        cout<<"Error opening file.\n";
+}
+
+void Matrix::writeMatrixToFile(const string &fname)
+{
+    if(verbose)
+        cout<<"In function writeMatrixToFile().\n";
+
+    ofstream outfile;
+    outfile.open(fname);
+
+    if(this->exists())
+    {
+        if(outfile)
+        {
+            outfile<<rows<<" "<<cols<<endl;
+            for (ulong i = 0; i < this->rows; i++)
+            {
+                for (ulong j = 0; j < this->cols; j++)
+                    outfile<<this->matrix[i][j]<<" ";
+                outfile<<endl;
+            }
+            outfile.close();
+        }
+        else
+            cout<<"Error opening file.\n";
+    }
 }
