@@ -6,28 +6,25 @@
 
 int main()
 {
-    Matrix *m1;
-    ulong rows, cols;
     string fname;
+    ulong rows, cols;
 
-    // Get rows and cols from the user.
-    cout<<"Enter rows and cols : ";
+    cout<<"Enter dimensions of A : ";
     cin>>rows>>cols;
 
-    // Create an object of type Matrix.
-    m1 = new Matrix(rows, cols);
+    Matrix A(rows, cols), X(cols, 1), B(cols, 1);
 
-    // To get rid of the character in the buffer.
-    getchar();
+    cout<<"File name to read A from : ";
+    cin>>fname;
 
-    // Get the file name from the user.
-    cout<<"Enter file name : ";
-    getline(cin, fname);
+    A.readMatrixFromFile(fname);
 
-    // Read the file provided by the user.
-    m1->readMatrixFromFile(fname);
+    cout<<"File name to read B from : ";
+    cin>>fname;
 
-    m1->displayMatrix();
+    B.readMatrixFromFile(fname);
 
-    return 0;
+    X.solveSystemOfEquations(A, B);
+
+    X.displayMatrix();
 }
