@@ -115,7 +115,7 @@ public:
      * @overload '=' to assign elements of one matrix to another.
      * @param matrixToBeAssigned is a reference to another object of the Matrix class.
      */
-    Matrix operator=(const Matrix &matrixToBeAssigned);
+    Matrix operator=(const Matrix &matrixToBeAssigned) const;
 
     /**
      * @overload '+' to add two matrices.
@@ -123,7 +123,7 @@ public:
      * @attention The two matrix objects are supposed to be of the same dimension.
      * @return Matrix object which contains sum of the matrices.
      */
-    Matrix operator+(const Matrix &matrixToBeAdded);
+    Matrix operator+(const Matrix &matrixToBeAdded) const;
 
     /**
      * @overload '-' to get the difference between two matrices.
@@ -131,14 +131,14 @@ public:
      * @attention The two matrix objects are supposed to be of the same dimension.
      * @return Matrix object which contains difference of the matrices.
      */
-    Matrix operator-(const Matrix &matrixToBeSubtracted);
+    Matrix operator-(const Matrix &matrixToBeSubtracted) const;
 
     /**
      * @overload '*' to multiply the matrix by a scalar.
      * @param scalar is a value by which the matrix is to be multiplied.
      * @return Matrix object which contains the modified matrix.
      */
-    Matrix operator*(double scalar);
+    Matrix operator*(double scalar) const;
 
     /**
      * @overload '*' to get the product of two matrices.
@@ -146,49 +146,64 @@ public:
      * @attention rows of matrix 1 are supposed to be equal to the columns of matrix 2 or vice-versa.
      * @return Matrix object having the product of the two matrices.
      */
-    Matrix operator*(const Matrix &matrixToBeMultiplied);
+    Matrix operator*(const Matrix &matrixToBeMultiplied) const;
 
     /**
      * @brief Checks whether the matrix is a square matrix.
      * @return true if square matrix else false.
      */
-    bool isSquareMatrix();
+    bool isSquareMatrix() const;
 
     /**
      * @brief Checks whether the matrix is an identity matrix.
      * @return true if identity else false.
      */
-    bool isIdentityMatrix();
+    bool isIdentityMatrix() const;
 
     /**
      * @brief Checks whether the matrix is a symmetric matrix.
      * @return true if symmetric matrix else false.
      */
-    bool isSymmetricMatrix();
+    bool isSymmetricMatrix() const;
 
     /**
      * @brief Checks whether the matrix is a NULL matrix.
      * @return true if NULL matrix else false.
      */
-    bool isNullMatrix();
+    bool isNullMatrix() const;
 
     /**
      * @brief Checks whether the matrix is a diagonal matrix.
      * @return true if diagonal matrix else false.
      */
-    bool isDiagonalMatrix();
+    bool isDiagonalMatrix() const;
 
     /**
      * @brief Checks whether the matrix is diagonally dominant.
      * @return true if it is diagonally dominant else false.
      */
-    bool isDiagonallyDominant();
+    bool isDiagonallyDominant() const;
+
+    /**
+     * @brief Checks whether the matrix is orthogonal.
+     * @return true if orthoganal else false.
+     */
+    bool isOrthogonal() const;
+
+    /**
+     * @brief Calculates the trace of the matrix.
+     * @return Trace of the matrix.
+     */
+    double traceOfMatrix() const;
 
     /**
      * @brief Gives the transpose of a given matrix.
      * @return a Matrix object which is the transpose of the calling matrix.
      */
-    Matrix transpose();
+    Matrix transpose() const;
+
+    /** @brief swap two rows.*/
+    void interchangeRows(ulong r1, ulong r2);
 
     /**
      * @brief Interchange the rows of the calling matrix.
@@ -200,21 +215,34 @@ public:
 
     /**
      * @brief Factorizes a given matrix into product of Lower and Upper triangular matrices.
-     * @param B is sent to take care of pivoting.
      * @details The diagonal elements of the lower triangular matrix are non-zero.
      * The diagonal elements of the upper triangular matrix are '1'.
-     * @return A Matrix object whose Upper triangular elements is the upper triangular matrix and the diagonals are '1'
+     * @return An augmented matrix whose Upper triangular elements is the upper triangular matrix and the diagonals are '1'
      * and Lower triangular elements is the lower triangular matrix including the diagonal elements.
      */
-    Matrix triangularFactorizationCrouts(Matrix &B);
+    Matrix triangularFactorizationCrouts() const;
+
+    /**
+     * @brief Solves a given matrix to find the solution by back substitution.
+     * @attention The function assumes the matrix is an upper triangular matrix.
+     * @return A solution matrix.
+     */
+    Matrix backSubstitution() const;
 
     /**
      * @brief Solves the given system of linear equations and returns a solution.
-     * @param X is a vector of unknowns
-     * @param B is a vector for which values of X should satisfy : A*X = B.
+     * @param A_B is the augmented matrix which is the system to be solved.
      * @return a Matrix object (vector) containing the solution which satisfies the system.
      */
-    void solveSystemOfEquations(Matrix &A, Matrix &B);
+    Matrix solveTriangularMatrix() const;
+
+    /**
+     * @brief Augments given matrices
+     * @param A is a reference to the coefficient matrix
+     * @param B is a reference to the constant matrix
+     * @return An augmented matrix.
+     */
+    friend Matrix augmentMatrices(const Matrix &A, const Matrix &B);
 };
 
 #endif

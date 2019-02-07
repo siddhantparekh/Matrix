@@ -9,22 +9,22 @@ int main()
     string fname;
     ulong rows, cols;
 
-    cout<<"Enter dimensions of A : ";
+    cout<<"Enter dimensions of coefficient matrix : ";
     cin>>rows>>cols;
 
     Matrix A(rows, cols), X(cols, 1), B(cols, 1);
 
-    cout<<"File name to read A from : ";
-    cin>>fname;
+    cout<<"Enter fname for A : ";
+    getline(cin, fname);
+    A.readMatrixFromFile(fname), A.displayMatrix();
 
-    A.readMatrixFromFile(fname);
+    cout<<"Enter fname for B : ";
+    getline(cin, fname);
+    B.readMatrixFromFile(fname), B.displayMatrix();
 
-    cout<<"File name to read B from : ";
-    cin>>fname;
+    Matrix A_B = augmentMatrices(A, B);
 
-    B.readMatrixFromFile(fname);
-
-    X.solveSystemOfEquations(A, B);
+    X = A_B.solveTriangularMatrix();
 
     X.displayMatrix();
 }
