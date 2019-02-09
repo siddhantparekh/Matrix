@@ -4,17 +4,6 @@
 
 #include "matrix.hpp"
 
-void Matrix::interchangeRows(ulong r1, ulong r2)
-{
-    double temp;
-    for(ulong j=0; j < this->cols; ++j)
-    {
-        temp = this->matrix[r1][j];
-        this->matrix[r1][j] = this->matrix[r2][j];
-        this->matrix[r2][j] = temp;
-    }
-}
-
 Matrix Matrix::transpose() const
 {
     CONDITIONAL_PRINT<<"In function transpose().\n";
@@ -53,4 +42,15 @@ Matrix augmentMatrices(const Matrix &A, const Matrix &B)
     }
 
     return augmentedMatrix;
+}
+
+void Matrix::interchangeRows(ulong r1, ulong r2)
+{
+    double temp;
+    for(ulong j=0; j < this->cols; ++j)
+    {
+        temp = this->matrix[r1][j];
+        this->matrix[r1][j] = this->matrix[r2][j];
+        this->matrix[r2][j] = temp;
+    }
 }

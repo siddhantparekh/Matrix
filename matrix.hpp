@@ -202,6 +202,14 @@ public:
      */
     Matrix transpose() const;
 
+    /**
+     * @brief Augments given matrices
+     * @param A is a reference to the coefficient matrix
+     * @param B is a reference to the constant matrix
+     * @return An augmented matrix.
+     */
+    friend Matrix augmentMatrices(const Matrix &A, const Matrix &B);
+
     /** @brief swap two rows.*/
     void interchangeRows(ulong r1, ulong r2);
 
@@ -214,6 +222,13 @@ public:
     void pivotMatrix(ulong rowToBeInterchanged);
 
     /**
+     * @brief Solves a given matrix to find the solution by back substitution.
+     * @attention The function assumes the matrix is an upper triangular matrix.
+     * @return A solution matrix.
+     */
+    Matrix backSubstitution() const;
+
+    /**
      * @brief Factorizes a given matrix into product of Lower and Upper triangular matrices.
      * @details The diagonal elements of the lower triangular matrix are non-zero.
      * The diagonal elements of the upper triangular matrix are '1'.
@@ -223,26 +238,13 @@ public:
     Matrix triangularFactorizationCrouts() const;
 
     /**
-     * @brief Solves a given matrix to find the solution by back substitution.
-     * @attention The function assumes the matrix is an upper triangular matrix.
-     * @return A solution matrix.
-     */
-    Matrix backSubstitution() const;
-
-    /**
      * @brief Solves the given system of linear equations and returns a solution.
      * @param A_B is the augmented matrix which is the system to be solved.
      * @return a Matrix object (vector) containing the solution which satisfies the system.
      */
     Matrix solveTriangularMatrix() const;
 
-    /**
-     * @brief Augments given matrices
-     * @param A is a reference to the coefficient matrix
-     * @param B is a reference to the constant matrix
-     * @return An augmented matrix.
-     */
-    friend Matrix augmentMatrices(const Matrix &A, const Matrix &B);
+    Matrix gaussianElimination() const;
 };
 
 #endif
