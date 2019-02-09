@@ -15,7 +15,7 @@ double Matrix::traceOfMatrix() const
     }
 
     double sum=0;
-    for(ulong i=0; i<this->rows; i++)
+    for(ulong i=0; i<this->rows; ++i)
         sum += this->matrix[i][i];
 
     return sum;

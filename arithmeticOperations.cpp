@@ -4,7 +4,7 @@
 
 #include "matrix.hpp"
 
-Matrix Matrix::operator=(const Matrix &matrixToBeAssigned) const
+Matrix& Matrix::operator=(const Matrix &matrixToBeAssigned)
 {
     CONDITIONAL_PRINT<<"In function operator=().\n";
 
@@ -14,8 +14,8 @@ Matrix Matrix::operator=(const Matrix &matrixToBeAssigned) const
     this->setDimensions(matrixToBeAssigned.rows, matrixToBeAssigned.cols);
 
     //Assign the elements from one matrix to another.
-    for(ulong i = 0; i < this->rows; i++)
-        for(ulong j = 0; j < this->cols; j++)
+    for(ulong i = 0; i < this->rows; ++i)
+        for(ulong j = 0; j < this->cols; ++j)
             this->matrix[i][j] = matrixToBeAssigned.matrix[i][j];
 
     CONDITIONAL_PRINT<<"Values assigned successfully.\n";
@@ -38,8 +38,8 @@ Matrix Matrix::operator+(const Matrix &matrixToBeAdded) const
     Matrix sum(this->rows, this->cols);
 
     //Add the elements of the two matrices.
-    for(ulong i=0; i < this->rows; i++)
-        for(ulong j=0; j < this->cols; j++)
+    for(ulong i=0; i < this->rows; ++i)
+        for(ulong j=0; j < this->cols; ++j)
             sum.matrix[i][j] = this->matrix[i][j] + matrixToBeAdded.matrix[i][j];
 
     return sum;
@@ -58,8 +58,8 @@ Matrix Matrix::operator-(const Matrix &matrixToBeSubtracted) const
     Matrix difference(this->rows, this->cols);
 
     //Subtract the elements of one matrix from another.
-    for(ulong i=0; i < this->rows; i++)
-        for(ulong j=0; j < this->cols; j++)
+    for(ulong i=0; i < this->rows; ++i)
+        for(ulong j=0; j < this->cols; ++j)
             difference.matrix[i][j] = this->matrix[i][j] - matrixToBeSubtracted.matrix[i][j];
 
     return difference;
@@ -72,8 +72,8 @@ Matrix Matrix::operator*(double scalar) const
     Matrix product(this->rows, this->cols);
 
     //Multiply the elements of the matrix with the scalar.
-    for(ulong i=0; i < this->rows; i++)
-        for(ulong j=0; j < this->cols; j++)
+    for(ulong i=0; i < this->rows; ++i)
+        for(ulong j=0; j < this->cols; ++j)
             product.matrix[i][j] = this->matrix[i][j] * scalar;
 
     return product;
@@ -88,9 +88,9 @@ Matrix Matrix::operator*(const Matrix &matrixToBeMultiplied) const
         Matrix product(this->rows, matrixToBeMultiplied.cols);
 
         //Multiply the elements of each row of matrix 1 and column of matrix 2 and sum them.
-        for(ulong i=0; i < this->rows; i++)
-            for(ulong j=0; j < matrixToBeMultiplied.cols; j++)
-                for(ulong k=0; k < matrixToBeMultiplied.rows; k++)
+        for(ulong i=0; i < this->rows; ++i)
+            for(ulong j=0; j < matrixToBeMultiplied.cols; ++j)
+                for(ulong k=0; k < matrixToBeMultiplied.rows; ++k)
                     product.matrix[i][j] += this->matrix[i][k] * matrixToBeMultiplied.matrix[k][j];
 
         return product;

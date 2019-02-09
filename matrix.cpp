@@ -16,7 +16,7 @@ void Matrix::allocateMemory()
     CONDITIONAL_PRINT<<"In function allocateMemory().\n";
 
     this->matrix = new double*[this->rows];
-    for(ulong i=0; i < this->rows; i++)
+    for(ulong i=0; i < this->rows; ++i)
         this->matrix[i] = new double[this->cols];
 
     CONDITIONAL_PRINT<<"Memory allocated.\n";
@@ -26,7 +26,7 @@ void Matrix::deallocateMemory()
 {
     CONDITIONAL_PRINT<<"In function deallocateMemory().\n";
 
-    for(ulong i = 0; i < this->rows; i++)
+    for(ulong i = 0; i < this->rows; ++i)
         delete[]this->matrix[i];
     delete[]this->matrix;
 
@@ -50,8 +50,8 @@ Matrix::Matrix(ulong rows, ulong cols) : rows(rows), cols(cols)
     allocateMemory();
 
     //Initialising matrix elements to 0
-    for(ulong i=0; i < this->rows; i++)
-        for(ulong j=0; j < this->cols; j++)
+    for(ulong i=0; i < this->rows; ++i)
+        for(ulong j=0; j < this->cols; ++j)
             this->matrix[i][j] = 0;
 
     CONDITIONAL_PRINT<<"Values initialised to 0.\n";
@@ -67,8 +67,8 @@ Matrix::Matrix(const Matrix &matrixToBeCopied)
     allocateMemory();
 
     //Copying matrix elements from argument object.
-    for(ulong i=0; i < this->rows; i++)
-        for(ulong j=0; j < this->cols; j++)
+    for(ulong i=0; i < this->rows; ++i)
+        for(ulong j=0; j < this->cols; ++j)
             this->matrix[i][j] = matrixToBeCopied.matrix[i][j];
 
     CONDITIONAL_PRINT<<"Values copied.\n";
@@ -97,13 +97,6 @@ ulong Matrix::getCols()
     return cols;
 }
 
-bool Matrix::exists()
-{
-    CONDITIONAL_PRINT<<"In function exists().\n";
-
-    return rows > 0 && cols > 0;
-}
-
 void Matrix::displayMatrix()
 {
     CONDITIONAL_PRINT<<"In function displayMatrix().\n";
@@ -116,9 +109,9 @@ void Matrix::displayMatrix()
         exit(1);
     }
 
-    for(ulong i = 0; i < this->rows; i++)
+    for(ulong i = 0; i < this->rows; ++i)
     {
-        for(ulong j = 0; j < this->cols; j++)
+        for(ulong j = 0; j < this->cols; ++j)
         {
             cout<<this->matrix[i][j]<<" ";
         }
@@ -138,8 +131,8 @@ void Matrix::generateRandomMatrix()
     }
 
     //Assigning random values to the matrix elements.
-    for(ulong i = 0; i < this->rows; i++)
-        for(ulong j = 0; j < this->cols; j++)
+    for(ulong i = 0; i < this->rows; ++i)
+        for(ulong j = 0; j < this->cols; ++j)
             this->matrix[i][j] = random()%100;
     CONDITIONAL_PRINT<<"Random values assigned successfully.\n";
 }

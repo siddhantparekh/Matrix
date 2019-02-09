@@ -23,18 +23,18 @@ Matrix Matrix::triangularFactorizationCrouts() const
     double sum;
 
     //Calculates the Upper and Lower Triangular matrices.
-    again:
-    for(ulong i=0; i < temporaryMatrix.rows; i++)
+    ulong i=0;
+    while(i<temporaryMatrix.rows)
     {
         flag = true;
-        for(ulong j=i; j < temporaryMatrix.rows; j++)
+        for(ulong j=i; j < temporaryMatrix.rows; ++j)
         {
             sum = 0;
 
             //if flag is true the elements of the upper triangular matrix are computed.
             if(flag)
             {
-                for(ulong k = 0; k < i; k++)
+                for(ulong k = 0; k < i; ++k)
                     sum += triangularMatrices.matrix[j][k] * triangularMatrices.matrix[k][i];
                 triangularMatrices.matrix[j][i] = temporaryMatrix.matrix[j][i] - sum;
 
@@ -42,7 +42,8 @@ Matrix Matrix::triangularFactorizationCrouts() const
                 if(i == j && triangularMatrices.matrix[i][j] == 0)
                 {
                     temporaryMatrix.pivotMatrix(i);
-                    goto again;
+                    i = 0;
+                    break;
                 }
 
                 if(j == temporaryMatrix.cols - 1)
@@ -51,15 +52,18 @@ Matrix Matrix::triangularFactorizationCrouts() const
                     flag = false;
                 }
             }
-            //else the elements of the lower triangular matrix are computed.
+                //else the elements of the lower triangular matrix are computed.
             else
             {
-                for(ulong k = 0; k < i; k++)
+                for(ulong k = 0; k < i; ++k)
                     sum += triangularMatrices.matrix[i][k] * triangularMatrices.matrix[k][j];
                 triangularMatrices.matrix[i][j] = (temporaryMatrix.matrix[i][j] - sum) / triangularMatrices.matrix[i][i];
             }
+
+            ++i;
         }
     }
+
 
     return triangularMatrices;
 }

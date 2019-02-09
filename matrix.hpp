@@ -89,7 +89,7 @@ public:
      * @brief Checks whether the matrix exists.
      * @return boolean value true if exists else false.
      */
-    bool exists();
+    bool exists() const;
 
     /** @brief Display the matrix.*/
     void displayMatrix();
@@ -115,7 +115,7 @@ public:
      * @overload '=' to assign elements of one matrix to another.
      * @param matrixToBeAssigned is a reference to another object of the Matrix class.
      */
-    Matrix operator=(const Matrix &matrixToBeAssigned) const;
+    Matrix& operator=(const Matrix &matrixToBeAssigned);
 
     /**
      * @overload '+' to add two matrices.

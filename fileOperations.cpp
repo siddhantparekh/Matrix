@@ -20,8 +20,8 @@ void Matrix::readMatrixFromFile(const string &fname)
         if(this->rows == rows && this->cols == cols)
         {
             //Assign values from file to matrix elements.
-            for(ulong i = 0; i < this->rows; i++)
-                for(ulong j = 0; j < this->cols; j++)
+            for(ulong i = 0; i < this->rows; ++i)
+                for(ulong j = 0; j < this->cols; ++j)
                     infile>>this->matrix[i][j];
         }
         else
@@ -53,9 +53,9 @@ void Matrix::writeMatrixToFile(const string &fname)
             outfile<<rows<<" "<<cols<<endl;
 
             //Write the matrix to the file.
-            for(ulong i = 0; i < this->rows; i++)
+            for(ulong i = 0; i < this->rows; ++i)
             {
-                for(ulong j = 0; j < this->cols; j++)
+                for(ulong j = 0; j < this->cols; ++j)
                     outfile<<this->matrix[i][j]<<" ";
                 outfile<<endl;
             }

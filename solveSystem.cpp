@@ -12,7 +12,7 @@ void Matrix::pivotMatrix(ulong rowToBeInterchanged)
 
     //Search for a row with non-zero diagonal element.
     while(i < this->rows && this->matrix[i][rowToBeInterchanged]==0)
-        i++;
+        ++i;
 
     if(i == this->rows)
     {
@@ -31,10 +31,10 @@ Matrix Matrix::backSubstitution() const
     double sum;
     Matrix solutionMatrix(this->rows, 1);
 
-    for(ulong i=solutionMatrix.rows; i > 0; i--)
+    for(ulong i=solutionMatrix.rows; i > 0; --i)
     {
         sum = 0;
-        for(ulong j=solutionMatrix.rows; j > i; j--)
+        for(ulong j=solutionMatrix.rows; j > i; --j)
         {
             sum += this->matrix[i-1][j-1] * solutionMatrix.matrix[j-1][0];
         }
@@ -54,10 +54,10 @@ Matrix Matrix::solveTriangularMatrix() const
     double sum;
 
     //Compute Z
-    for(ulong i=0; i < this->rows; i++)
+    for(ulong i=0; i < this->rows; ++i)
     {
         sum = 0;
-        for(ulong j=0; j < i; j++)
+        for(ulong j=0; j < i; ++j)
             sum += triangularMatrices.matrix[i][j] * Z.matrix[j][0];
 
         Z.matrix[i][0] = (this->matrix[i][this->cols-1] - sum) / triangularMatrices.matrix[i][i];
@@ -66,9 +66,9 @@ Matrix Matrix::solveTriangularMatrix() const
     Matrix upperTriangular(this->rows, this->cols);
 
     //Create upper triangular matrix
-    for(ulong i=0; i < this->rows; i++)
+    for(ulong i=0; i < this->rows; ++i)
     {
-        for(ulong j=0; j < this->rows; j++)
+        for(ulong j=0; j < this->rows; ++j)
             this->matrix[i][j] = triangularMatrices.matrix[i][j];
         this->matrix[i][this->cols-1] = Z.matrix[i][0];
     }
