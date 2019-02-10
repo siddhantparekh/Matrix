@@ -235,7 +235,7 @@ public:
      * @return An augmented matrix whose Upper triangular elements is the upper triangular matrix and the diagonals are '1'
      * and Lower triangular elements is the lower triangular matrix including the diagonal elements.
      */
-    Matrix triangularFactorizationCrouts() const;
+    Matrix triangularFactorizationCrouts();
 
     /**
      * @brief Solves the given system of linear equations and returns a solution.

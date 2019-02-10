@@ -20,7 +20,7 @@ Matrix Matrix::transpose() const
 //Friend function
 Matrix augmentMatrices(const Matrix &A, const Matrix &B)
 {
-    CONDITIONAL_PRINT<<"In function augmentMatrices().n";
+    CONDITIONAL_PRINT<<"In function augmentMatrices().\n";
 
     if(A.rows != B.rows)
     {
@@ -37,8 +37,7 @@ Matrix augmentMatrices(const Matrix &A, const Matrix &B)
         for(ulong j=0; j<A.cols; ++j)
             augmentedMatrix.matrix[i][j] = A.matrix[i][j];
         //Assign elements of B
-        for(ulong j=A.cols; j<augmentedMatrix.cols; ++j)
-            augmentedMatrix.matrix[i][j] = B.matrix[i][j-A.cols];
+        augmentedMatrix.matrix[i][augmentedMatrix.cols-1] = B.matrix[i][0];
     }
 
     return augmentedMatrix;

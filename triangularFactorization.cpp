@@ -4,7 +4,7 @@
 
 #include "matrix.hpp"
 
-Matrix Matrix::triangularFactorizationCrouts() const
+Matrix Matrix::triangularFactorizationCrouts()
 {
     CONDITIONAL_PRINT<<"In function triangularFactorizationCrouts().\n";
 
@@ -14,56 +14,51 @@ Matrix Matrix::triangularFactorizationCrouts() const
         exit(2);
     }
 
-    //Create a temporary matrix object so that if pivoting occurs, the original matrix won't be changed.
-    Matrix temporaryMatrix(*this);
-
-    Matrix triangularMatrices(temporaryMatrix.rows, temporaryMatrix.cols);
+    Matrix triangularMatrices(this->rows, this->cols);
 
     bool flag;
     double sum;
 
     //Calculates the Upper and Lower Triangular matrices.
     ulong i=0;
-    while(i<temporaryMatrix.rows)
+    while(i < this->rows)
     {
         flag = true;
-        for(ulong j=i; j < temporaryMatrix.rows; ++j)
+        for(ulong j=i; j < this->rows; ++j)
         {
             sum = 0;
 
-            //if flag is true the elements of the upper triangular matrix are computed.
+            //if flag is true the elements of the lower triangular matrix are computed.
             if(flag)
             {
                 for(ulong k = 0; k < i; ++k)
                     sum += triangularMatrices.matrix[j][k] * triangularMatrices.matrix[k][i];
-                triangularMatrices.matrix[j][i] = temporaryMatrix.matrix[j][i] - sum;
+                triangularMatrices.matrix[j][i] = this->matrix[j][i] - sum;
 
                 //Pivot matrices if required and start again
                 if(i == j && triangularMatrices.matrix[i][j] == 0)
                 {
-                    temporaryMatrix.pivotMatrix(i);
+                    this->pivotMatrix(i);
                     i = 0;
                     break;
                 }
 
-                if(j == temporaryMatrix.cols - 1)
+                if(j == this->cols - 2)
                 {
                     j = i;
                     flag = false;
                 }
             }
-                //else the elements of the lower triangular matrix are computed.
+            //else the elements of the upper triangular matrix are computed.
             else
             {
                 for(ulong k = 0; k < i; ++k)
                     sum += triangularMatrices.matrix[i][k] * triangularMatrices.matrix[k][j];
-                triangularMatrices.matrix[i][j] = (temporaryMatrix.matrix[i][j] - sum) / triangularMatrices.matrix[i][i];
+                triangularMatrices.matrix[i][j] = (this->matrix[i][j] - sum) / triangularMatrices.matrix[i][i];
             }
-
-            ++i;
         }
+        ++i;
     }
-
 
     return triangularMatrices;
 }
