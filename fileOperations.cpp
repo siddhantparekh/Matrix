@@ -26,7 +26,7 @@ void Matrix::readMatrixFromFile(const string &fname)
         }
         else
         {
-            cout<<"Invalid operation.\n";
+            cerr<<"Invalid operation.\n";
             exit(2);
         }
 
@@ -34,7 +34,7 @@ void Matrix::readMatrixFromFile(const string &fname)
     }
     else
     {
-        cout<<"Error opening file.\n";
+        cerr<<"Error opening file.\n";
         exit(3);
     }
 }
@@ -64,13 +64,13 @@ void Matrix::writeMatrixToFile(const string &fname)
         }
         else
         {
-            cout<<"Error opening file.\n";
+            cerr<<"Error opening file.\n";
             exit(3);
         }
     }
     else
     {
-        cout<<"Matrix does not exist.\n";
+        cerr<<"Matrix does not exist.\n";
         exit(1);
     }
 }

@@ -238,13 +238,22 @@ public:
     Matrix triangularFactorizationCrouts();
 
     /**
-     * @brief Solves the given system of linear equations and returns a solution.
-     * @param A_B is the augmented matrix which is the system to be solved.
+     * @brief Solves the given system of linear equations using LU decomposition/Triangular Factorization.
      * @return a Matrix object (vector) containing the solution which satisfies the system.
      */
     Matrix solveTriangularMatrix() const;
 
+    /**
+     * @brief Solves the given system of linear equations using gaussian elimination.
+     * @return a Matrix object (vector) containing the solution which satisfies the system.
+     */
     Matrix gaussianElimination() const;
+
+    /**
+     * @brief Solves the given system of linear equations using Gauss Jacobi.
+     * @return a Matrix object (vector) containing the solution which satisfies the system.
+     */
+    Matrix gaussSeidel() const;
 };
 
 #endif

@@ -24,7 +24,7 @@ Matrix augmentMatrices(const Matrix &A, const Matrix &B)
 
     if(A.rows != B.rows)
     {
-        cout<<"Invalid operation.\n";
+        cerr<<"Invalid operation.\n";
         exit(2);
     }
 

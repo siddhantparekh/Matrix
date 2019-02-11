@@ -10,7 +10,7 @@ double Matrix::traceOfMatrix() const
 
     if(!isSquareMatrix())
     {
-        cout<<"Invalid operation.\n";
+        cerr<<"Invalid operation.\n";
         exit(2);
     }
 

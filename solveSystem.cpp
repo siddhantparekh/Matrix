@@ -16,7 +16,7 @@ void Matrix::pivotMatrix(ulong rowToBeInterchanged)
 
     if(i == this->rows)
     {
-        cout<<"Cannot pivot.\n";
+        cerr<<"Cannot pivot.\n";
         exit(4);
     }
 

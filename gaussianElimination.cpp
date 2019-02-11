@@ -10,7 +10,7 @@ Matrix Matrix::gaussianElimination() const
 
     if(this->rows != this->cols-1)
     {
-        cout<<"Invalid operation.\n";
+        cerr<<"Invalid operation.\n";
         exit(2);
     }
 

@@ -31,7 +31,7 @@ Matrix Matrix::operator+(const Matrix &matrixToBeAdded) const
 
     if(this->rows != matrixToBeAdded.rows || this->cols != matrixToBeAdded.cols)
     {
-        cout<<"Invalid operation.\n";
+        cerr<<"Invalid operation.\n";
         exit(2);
     }
 
@@ -51,7 +51,7 @@ Matrix Matrix::operator-(const Matrix &matrixToBeSubtracted) const
 
     if(this->rows != matrixToBeSubtracted.rows || this->cols != matrixToBeSubtracted.cols)
     {
-        cout<<"Invalid operation.\n";
+        cerr<<"Invalid operation.\n";
         exit(2);
     }
 
@@ -97,7 +97,7 @@ Matrix Matrix::operator*(const Matrix &matrixToBeMultiplied) const
     }
     else
     {
-        cout<<"Invalid operation.\n";
+        cerr<<"Invalid operation.\n";
         exit(2);
     }
 }

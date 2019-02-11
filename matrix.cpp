@@ -101,11 +101,9 @@ void Matrix::displayMatrix()
 {
     CONDITIONAL_PRINT<<"In function displayMatrix().\n";
 
-    cout<<"Matrix("<<this->rows<<", "<<this->cols<<")\n";
-
     if(!this->exists())
     {
-        cout<<"Matrix does not exist.\n";
+        cerr<<"Matrix does not exist.\n";
         exit(1);
     }
 
@@ -126,7 +124,7 @@ void Matrix::generateRandomMatrix()
     CONDITIONAL_PRINT<<"In function generateRandomMatrix().\n";
     if(!this->exists())
     {
-        cout<<"Matrix does not exist.\n";
+        cerr<<"Matrix does not exist.\n";
         exit(1);
     }
 
