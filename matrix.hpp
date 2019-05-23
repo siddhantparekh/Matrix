@@ -9,7 +9,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <fstream>
-#include<cmath>
+#include <cmath>
 using namespace std;
 
 /**
@@ -250,10 +250,36 @@ public:
     Matrix gaussianElimination() const;
 
     /**
-     * @brief Solves the given system of linear equations using Gauss Jacobi.
+     * @brief Solves the given system of linear equations using Gauss Seidel.
      * @return a Matrix object (vector) containing the solution which satisfies the system.
      */
     Matrix gaussSeidel() const;
+
+    /**
+     * @brief Solves the given system of linear equations using Gauss Jacobi.
+     * @return a Matrix object (vector) containing the solution which satisfies the system.
+     */
+    Matrix gaussJacobi() const;
+
+    /**
+     * @brief Compares given matrices
+     * @param rop is the right hand side matrix
+     * @return true if matrices are equivalent else false
+     */
+    bool operator==(const Matrix &rop) const;
+
+    /**
+     * @brief Easier access to matrix elements
+     * @param index is the row number i.e. the first parameter
+     * @return a reference to a pointer of a row
+     */
+    double*& operator[](ulong index) const;
+
+    /**
+     * @brief Computes all possible two minors and finds a zero in the Matrix
+     * @return Position of the zero
+     */
+    Matrix find_zero() const;
 };
 
 #endif

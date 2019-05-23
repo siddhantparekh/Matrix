@@ -1,10 +1,10 @@
 //
-// Created by siddhant on 11/2/19.
+// Created by siddhant on 24/2/19.
 //
 
 #include "matrix.hpp"
 
-Matrix Matrix::gaussSeidel() const
+Matrix Matrix::gaussJacobi() const
 {
     if(!this->isDiagonallyDominant())
     {
@@ -12,14 +12,14 @@ Matrix Matrix::gaussSeidel() const
         exit(1);
     }
 
-    Matrix solutionMatrix(this->rows, 1);
+    Matrix temporaryMatrix(this->rows, 1), solutionMatrix(this->rows, 1);
 
     double sum, difference, thershold;
 
     thershold = 0.0000001;
     difference = 1;
 
-    //Perform Gauss Seidel
+    //Perform Gauss Jacobi
     while(difference > thershold)
     {
         //Compute all unknowns in every iteration
@@ -28,15 +28,17 @@ Matrix Matrix::gaussSeidel() const
             sum = 0;
             for(ulong j = 0; j < this->rows; ++j)
                 if(i != j)
-                    sum += this->matrix[i][j] * solutionMatrix.matrix[j][0];
-
-            difference = solutionMatrix.matrix[0][0];
+                    sum += this->matrix[i][j] * temporaryMatrix.matrix[j][0];
 
             solutionMatrix.matrix[i][0] =
                     (this->matrix[i][this->cols - 1] - sum) / this->matrix[i][i];
-        
-            difference = abs(difference - solutionMatrix[0][0]);
         }
+
+        difference = abs(solutionMatrix.matrix[0][0] - temporaryMatrix.matrix[0][0]);
+
+        //copy elements of solutionMatrix to temporaryMatrix
+        for(ulong i = 0; i < this->rows; ++i)
+            temporaryMatrix.matrix[i][0] = solutionMatrix.matrix[i][0];
     }
 
     return solutionMatrix;
