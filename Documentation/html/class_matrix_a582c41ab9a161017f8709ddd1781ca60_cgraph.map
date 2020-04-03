@@ -1,0 +1,6 @@
+<map id="Matrix::isOrthogonal" name="Matrix::isOrthogonal">
+<area shape="rect" id="node1" title="Checks whether the matrix is orthogonal." alt="" coords="5,31,144,57"/>
+<area shape="rect" id="node2" href="$class_matrix.html#ab9422d99da389c39c1503410efaa3077" title="Checks whether the matrix is an identity matrix." alt="" coords="192,5,347,32"/>
+<area shape="rect" id="node4" href="$class_matrix.html#a759661b75b9681f3a89ff75e27933b3a" title="Gives the transpose of a given matrix." alt="" coords="208,56,331,83"/>
+<area shape="rect" id="node3" href="$class_matrix.html#acf5f93080de2ecac0c4a6052dbafbc78" title="Checks whether the matrix is a square matrix." alt="" coords="395,5,548,32"/>
+</map>

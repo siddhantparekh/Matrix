@@ -1,0 +1,4 @@
+<map id="Matrix::pivotMatrix" name="Matrix::pivotMatrix">
+<area shape="rect" id="node1" title="Interchange the rows of the calling matrix." alt="" coords="5,5,136,32"/>
+<area shape="rect" id="node2" href="$class_matrix.html#ae8f7c97b3b75c33536a130159a5d1c19" title="swap two rows." alt="" coords="184,5,351,32"/>
+</map>

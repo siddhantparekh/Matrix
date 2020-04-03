@@ -1,0 +1,525 @@
+.TH "Matrix" 3 "Fri Apr 3 2020" "Numerical Methods for Matrices" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Matrix
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <matrix\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMatrix\fP ()"
+.br
+.RI "Default constructor\&. "
+.ti -1c
+.RI "\fBMatrix\fP (ulong rows, ulong cols)"
+.br
+.RI "Parameterized constructor\&. "
+.ti -1c
+.RI "\fBMatrix\fP (const \fBMatrix\fP &matrixToBeCopied)"
+.br
+.RI "Copy constructor\&. "
+.ti -1c
+.RI "virtual \fB~Matrix\fP ()"
+.br
+.RI "Destructor\&. "
+.ti -1c
+.RI "ulong \fBgetRows\fP ()"
+.br
+.RI "Getter for member rows\&. "
+.ti -1c
+.RI "ulong \fBgetCols\fP ()"
+.br
+.RI "Getter for member cols\&. "
+.ti -1c
+.RI "bool \fBexists\fP () const"
+.br
+.RI "Checks whether the matrix exists\&. "
+.ti -1c
+.RI "void \fBdisplayMatrix\fP ()"
+.br
+.RI "Display the matrix\&. "
+.ti -1c
+.RI "void \fBgenerateRandomMatrix\fP ()"
+.br
+.RI "Assigns random values to the matrix if exists\&. "
+.ti -1c
+.RI "void \fBreadMatrixFromFile\fP (const string &fname)"
+.br
+.RI "Reads a matrix from a file\&. "
+.ti -1c
+.RI "void \fBwriteMatrixToFile\fP (const string &fname)"
+.br
+.RI "Writes the matrix to the file\&. "
+.ti -1c
+.RI "\fBMatrix\fP & \fBoperator=\fP (const \fBMatrix\fP &matrixToBeAssigned)"
+.br
+.ti -1c
+.RI "\fBMatrix\fP \fBoperator+\fP (const \fBMatrix\fP &matrixToBeAdded) const"
+.br
+.ti -1c
+.RI "\fBMatrix\fP \fBoperator\-\fP (const \fBMatrix\fP &matrixToBeSubtracted) const"
+.br
+.ti -1c
+.RI "\fBMatrix\fP \fBoperator*\fP (double scalar) const"
+.br
+.ti -1c
+.RI "\fBMatrix\fP \fBoperator*\fP (const \fBMatrix\fP &matrixToBeMultiplied) const"
+.br
+.ti -1c
+.RI "bool \fBisSquareMatrix\fP () const"
+.br
+.RI "Checks whether the matrix is a square matrix\&. "
+.ti -1c
+.RI "bool \fBisIdentityMatrix\fP () const"
+.br
+.RI "Checks whether the matrix is an identity matrix\&. "
+.ti -1c
+.RI "bool \fBisSymmetricMatrix\fP () const"
+.br
+.RI "Checks whether the matrix is a symmetric matrix\&. "
+.ti -1c
+.RI "bool \fBisNullMatrix\fP () const"
+.br
+.RI "Checks whether the matrix is a NULL matrix\&. "
+.ti -1c
+.RI "bool \fBisDiagonalMatrix\fP () const"
+.br
+.RI "Checks whether the matrix is a diagonal matrix\&. "
+.ti -1c
+.RI "bool \fBisDiagonallyDominant\fP () const"
+.br
+.RI "Checks whether the matrix is diagonally dominant\&. "
+.ti -1c
+.RI "bool \fBisOrthogonal\fP () const"
+.br
+.RI "Checks whether the matrix is orthogonal\&. "
+.ti -1c
+.RI "double \fBtraceOfMatrix\fP () const"
+.br
+.RI "Calculates the trace of the matrix\&. "
+.ti -1c
+.RI "\fBMatrix\fP \fBtranspose\fP () const"
+.br
+.RI "Gives the transpose of a given matrix\&. "
+.ti -1c
+.RI "void \fBinterchangeRows\fP (ulong r1, ulong r2)"
+.br
+.RI "swap two rows\&. "
+.ti -1c
+.RI "void \fBpivotMatrix\fP (ulong rowToBeInterchanged)"
+.br
+.RI "Interchange the rows of the calling matrix\&. "
+.ti -1c
+.RI "\fBMatrix\fP \fBbackSubstitution\fP () const"
+.br
+.RI "Solves a given matrix to find the solution by back substitution\&. "
+.ti -1c
+.RI "\fBMatrix\fP \fBtriangularFactorizationCrouts\fP ()"
+.br
+.RI "Factorizes a given matrix into product of Lower and Upper triangular matrices\&. "
+.ti -1c
+.RI "\fBMatrix\fP \fBsolveTriangularMatrix\fP () const"
+.br
+.RI "Solves the given system of linear equations using LU decomposition/Triangular Factorization\&. "
+.ti -1c
+.RI "\fBMatrix\fP \fBgaussianElimination\fP () const"
+.br
+.RI "Solves the given system of linear equations using gaussian elimination\&. "
+.ti -1c
+.RI "\fBMatrix\fP \fBgaussSeidel\fP () const"
+.br
+.RI "Solves the given system of linear equations using Gauss Seidel\&. "
+.ti -1c
+.RI "\fBMatrix\fP \fBgaussJacobi\fP () const"
+.br
+.RI "Solves the given system of linear equations using Gauss Jacobi\&. "
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBMatrix\fP &rop) const"
+.br
+.RI "Compares given matrices\&. "
+.ti -1c
+.RI "double *& \fBoperator[]\fP (ulong index) const"
+.br
+.RI "Easier access to matrix elements\&. "
+.ti -1c
+.RI "\fBMatrix\fP \fBfind_zero\fP () const"
+.br
+.RI "Computes all possible two minors and finds a zero in the \fBMatrix\fP\&. "
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "\fBMatrix\fP \fBaugmentMatrices\fP (const \fBMatrix\fP &A, const \fBMatrix\fP &B)"
+.br
+.RI "Augments given matrices\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A library to perform operations on matrices\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Matrix::Matrix ()"
+
+.PP
+Default constructor\&. Initialises values of rows and cols to 0\&. 
+.SS "Matrix::Matrix (ulong rows, ulong cols)"
+
+.PP
+Parameterized constructor\&. Memory is allocated to the member **matrix pointer\&. The matrix elements are initialized to 0\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIrows\fP is of the type unsigned long, used to initialise the member rows\&. 
+.br
+\fIcols\fP is of the type unsigned long, used to initialise the member cols\&. 
+.RE
+.PP
+
+.SS "Matrix::Matrix (const \fBMatrix\fP & matrixToBeCopied)"
+
+.PP
+Copy constructor\&. The contents of the object received in the argument list are copied to the current objects memory\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImatrixToBeCopied\fP is a reference to another object of the \fBMatrix\fP class\&. 
+.RE
+.PP
+
+.SS "Matrix::~Matrix ()\fC [virtual]\fP"
+
+.PP
+Destructor\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBMatrix\fP Matrix::backSubstitution () const"
+
+.PP
+Solves a given matrix to find the solution by back substitution\&. 
+.PP
+\fBAttention\fP
+.RS 4
+The function assumes the matrix is an upper triangular matrix\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A solution matrix\&. 
+.RE
+.PP
+
+.SS "void Matrix::displayMatrix ()"
+
+.PP
+Display the matrix\&. 
+.SS "bool Matrix::exists () const"
+
+.PP
+Checks whether the matrix exists\&. 
+.PP
+\fBReturns\fP
+.RS 4
+boolean value true if exists else false\&. 
+.RE
+.PP
+
+.SS "\fBMatrix\fP Matrix::find_zero () const"
+
+.PP
+Computes all possible two minors and finds a zero in the \fBMatrix\fP\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Position of the zero 
+.RE
+.PP
+
+.SS "\fBMatrix\fP Matrix::gaussianElimination () const"
+
+.PP
+Solves the given system of linear equations using gaussian elimination\&. 
+.PP
+\fBReturns\fP
+.RS 4
+a \fBMatrix\fP object (vector) containing the solution which satisfies the system\&. 
+.RE
+.PP
+
+.SS "\fBMatrix\fP Matrix::gaussJacobi () const"
+
+.PP
+Solves the given system of linear equations using Gauss Jacobi\&. 
+.PP
+\fBReturns\fP
+.RS 4
+a \fBMatrix\fP object (vector) containing the solution which satisfies the system\&. 
+.RE
+.PP
+
+.SS "\fBMatrix\fP Matrix::gaussSeidel () const"
+
+.PP
+Solves the given system of linear equations using Gauss Seidel\&. 
+.PP
+\fBReturns\fP
+.RS 4
+a \fBMatrix\fP object (vector) containing the solution which satisfies the system\&. 
+.RE
+.PP
+
+.SS "void Matrix::generateRandomMatrix ()"
+
+.PP
+Assigns random values to the matrix if exists\&. 
+.SS "ulong Matrix::getCols ()"
+
+.PP
+Getter for member cols\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Columns of the matrix\&. 
+.RE
+.PP
+
+.SS "ulong Matrix::getRows ()"
+
+.PP
+Getter for member rows\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Rows of the matrix\&. 
+.RE
+.PP
+
+.SS "void Matrix::interchangeRows (ulong r1, ulong r2)"
+
+.PP
+swap two rows\&. 
+.SS "bool Matrix::isDiagonallyDominant () const"
+
+.PP
+Checks whether the matrix is diagonally dominant\&. 
+.PP
+\fBReturns\fP
+.RS 4
+true if it is diagonally dominant else false\&. 
+.RE
+.PP
+
+.SS "bool Matrix::isDiagonalMatrix () const"
+
+.PP
+Checks whether the matrix is a diagonal matrix\&. 
+.PP
+\fBReturns\fP
+.RS 4
+true if diagonal matrix else false\&. 
+.RE
+.PP
+
+.SS "bool Matrix::isIdentityMatrix () const"
+
+.PP
+Checks whether the matrix is an identity matrix\&. 
+.PP
+\fBReturns\fP
+.RS 4
+true if identity else false\&. 
+.RE
+.PP
+
+.SS "bool Matrix::isNullMatrix () const"
+
+.PP
+Checks whether the matrix is a NULL matrix\&. 
+.PP
+\fBReturns\fP
+.RS 4
+true if NULL matrix else false\&. 
+.RE
+.PP
+
+.SS "bool Matrix::isOrthogonal () const"
+
+.PP
+Checks whether the matrix is orthogonal\&. 
+.PP
+\fBReturns\fP
+.RS 4
+true if orthoganal else false\&. 
+.RE
+.PP
+
+.SS "bool Matrix::isSquareMatrix () const"
+
+.PP
+Checks whether the matrix is a square matrix\&. 
+.PP
+\fBReturns\fP
+.RS 4
+true if square matrix else false\&. 
+.RE
+.PP
+
+.SS "bool Matrix::isSymmetricMatrix () const"
+
+.PP
+Checks whether the matrix is a symmetric matrix\&. 
+.PP
+\fBReturns\fP
+.RS 4
+true if symmetric matrix else false\&. 
+.RE
+.PP
+
+.SS "\fBMatrix\fP Matrix::operator* (const \fBMatrix\fP & matrixToBeMultiplied) const"
+
+.SS "\fBMatrix\fP Matrix::operator* (double scalar) const"
+
+.SS "\fBMatrix\fP Matrix::operator+ (const \fBMatrix\fP & matrixToBeAdded) const"
+
+.SS "\fBMatrix\fP Matrix::operator\- (const \fBMatrix\fP & matrixToBeSubtracted) const"
+
+.SS "\fBMatrix\fP & Matrix::operator= (const \fBMatrix\fP & matrixToBeAssigned)"
+
+.SS "bool Matrix::operator== (const \fBMatrix\fP & rop) const"
+
+.PP
+Compares given matrices\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIrop\fP is the right hand side matrix 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if matrices are equivalent else false 
+.RE
+.PP
+
+.SS "double *& Matrix::operator[] (ulong index) const"
+
+.PP
+Easier access to matrix elements\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP is the row number i\&.e\&. the first parameter 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a reference to a pointer of a row 
+.RE
+.PP
+
+.SS "void Matrix::pivotMatrix (ulong rowToBeInterchanged)"
+
+.PP
+Interchange the rows of the calling matrix\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIrowToBeInterchanged\fP is the row number which is to be replaced\&.
+.RE
+.PP
+A row below the rowToBeInterchanged is searched whose diagonal element for the rowToBeInterchanged is non-zero and replaced with the rowToBeInterchanged\&. 
+.SS "void Matrix::readMatrixFromFile (const string & fname)"
+
+.PP
+Reads a matrix from a file\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfname\fP contains the file name from which the matrix is to be read\&. 
+.RE
+.PP
+
+.SS "\fBMatrix\fP Matrix::solveTriangularMatrix () const"
+
+.PP
+Solves the given system of linear equations using LU decomposition/Triangular Factorization\&. 
+.PP
+\fBReturns\fP
+.RS 4
+a \fBMatrix\fP object (vector) containing the solution which satisfies the system\&. 
+.RE
+.PP
+
+.SS "double Matrix::traceOfMatrix () const"
+
+.PP
+Calculates the trace of the matrix\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Trace of the matrix\&. 
+.RE
+.PP
+
+.SS "\fBMatrix\fP Matrix::transpose () const"
+
+.PP
+Gives the transpose of a given matrix\&. 
+.PP
+\fBReturns\fP
+.RS 4
+a \fBMatrix\fP object which is the transpose of the calling matrix\&. 
+.RE
+.PP
+
+.SS "\fBMatrix\fP Matrix::triangularFactorizationCrouts ()"
+
+.PP
+Factorizes a given matrix into product of Lower and Upper triangular matrices\&. The diagonal elements of the lower triangular matrix are non-zero\&. The diagonal elements of the upper triangular matrix are '1'\&. 
+.PP
+\fBReturns\fP
+.RS 4
+An augmented matrix whose Upper triangular elements is the upper triangular matrix and the diagonals are '1' and Lower triangular elements is the lower triangular matrix including the diagonal elements\&. 
+.RE
+.PP
+
+.SS "void Matrix::writeMatrixToFile (const string & fname)"
+
+.PP
+Writes the matrix to the file\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfname\fP contains the file name to which the matrix is to be written\&. 
+.RE
+.PP
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "\fBMatrix\fP augmentMatrices (const \fBMatrix\fP & A, const \fBMatrix\fP & B)\fC [friend]\fP"
+
+.PP
+Augments given matrices\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIA\fP is a reference to the coefficient matrix 
+.br
+\fIB\fP is a reference to the constant matrix 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+An augmented matrix\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Numerical Methods for Matrices from the source code\&.

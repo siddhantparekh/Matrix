@@ -1,0 +1,60 @@
+.TH "main.cpp" 3 "Fri Apr 3 2020" "Numerical Methods for Matrices" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+main.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'matrix\&.hpp'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "ulong \fBgetMinCol\fP (\fBMatrix\fP &coefficients, \fBMatrix\fP &A, \fBMatrix\fP &B, \fBMatrix\fP &Z)"
+.br
+.RI "Computes (Zj-Cj) "
+.ti -1c
+.RI "ulong \fBgetMinRow\fP (\fBMatrix\fP &coefficients, \fBMatrix\fP &A, \fBMatrix\fP &B, \fBMatrix\fP &ratio, ulong minCol)"
+.br
+.RI "computes the ratios if divisor non-zero "
+.ti -1c
+.RI "void \fBsimplex\fP (\fBMatrix\fP &coefficients, \fBMatrix\fP &A, \fBMatrix\fP &B)"
+.br
+.ti -1c
+.RI "int \fBmain\fP ()"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "ulong getMinCol (\fBMatrix\fP & coefficients, \fBMatrix\fP & A, \fBMatrix\fP & B, \fBMatrix\fP & Z)"
+
+.PP
+Computes (Zj-Cj) 
+.PP
+\fBReturns\fP
+.RS 4
+min value index + 1 
+.RE
+.PP
+
+.SS "ulong getMinRow (\fBMatrix\fP & coefficients, \fBMatrix\fP & A, \fBMatrix\fP & B, \fBMatrix\fP & ratio, ulong minCol)"
+
+.PP
+computes the ratios if divisor non-zero 
+.PP
+\fBReturns\fP
+.RS 4
+min ratio index 
+.RE
+.PP
+
+.SS "int main ()"
+
+.SS "void simplex (\fBMatrix\fP & coefficients, \fBMatrix\fP & A, \fBMatrix\fP & B)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Numerical Methods for Matrices from the source code\&.

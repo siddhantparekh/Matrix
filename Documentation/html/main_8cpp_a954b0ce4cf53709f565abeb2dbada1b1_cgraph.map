@@ -1,0 +1,5 @@
+<map id="getMinCol" name="getMinCol">
+<area shape="rect" id="node1" title="Computes (Zj&#45;Cj)" alt="" coords="5,31,87,57"/>
+<area shape="rect" id="node2" href="$class_matrix.html#ae1ce0934b2da4132b445aeaadc8424a7" title="Getter for member cols." alt="" coords="139,5,249,32"/>
+<area shape="rect" id="node3" href="$class_matrix.html#a91d06e05f67ae27c4c93f1c510d35f10" title="Getter for member rows." alt="" coords="135,56,253,83"/>
+</map>

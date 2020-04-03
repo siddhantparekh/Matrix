@@ -1,0 +1,4 @@
+<map id="Matrix::gaussSeidel" name="Matrix::gaussSeidel">
+<area shape="rect" id="node1" title="Solves the given system of linear equations using Gauss Seidel." alt="" coords="5,5,143,32"/>
+<area shape="rect" id="node2" href="$class_matrix.html#aaead6baf899cbf8805648ce0996d3fe7" title="Checks whether the matrix is diagonally dominant." alt="" coords="191,5,384,32"/>
+</map>

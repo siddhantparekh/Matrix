@@ -1,0 +1,6 @@
+<map id="Matrix::gaussianElimination" name="Matrix::gaussianElimination">
+<area shape="rect" id="node1" title="Solves the given system of linear equations using gaussian elimination." alt="" coords="5,31,188,57"/>
+<area shape="rect" id="node2" href="$class_matrix.html#abbf4eadc4ff42dd12891d825725218a0" title="Solves a given matrix to find the solution by back substitution." alt="" coords="236,5,399,32"/>
+<area shape="rect" id="node3" href="$class_matrix.html#a0be93dbd3f7ffe66f7d823c10fdc429c" title="Interchange the rows of the calling matrix." alt="" coords="252,56,383,83"/>
+<area shape="rect" id="node4" href="$class_matrix.html#ae8f7c97b3b75c33536a130159a5d1c19" title="swap two rows." alt="" coords="447,56,613,83"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Matrix::backSubstitution" name="Matrix::backSubstitution">
+<area shape="rect" id="node1" title="Solves a given matrix to find the solution by back substitution." alt="" coords="244,31,407,57"/>
+<area shape="rect" id="node2" href="$class_matrix.html#ac0dc151ef1450daf3fa6f264d825ffc7" title="Solves the given system of linear equations using gaussian elimination." alt="" coords="9,5,192,32"/>
+<area shape="rect" id="node3" href="$class_matrix.html#a1dda6b86a7b258ad14472f15d2df1677" title="Solves the given system of linear equations using LU decomposition/Triangular Factorization." alt="" coords="5,56,196,83"/>
+</map>

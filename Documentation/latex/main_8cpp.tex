@@ -1,0 +1,119 @@
+\hypertarget{main_8cpp}{}\doxysection{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.cpp@{main.cpp}}
+{\ttfamily \#include \char`\"{}matrix.\+hpp\char`\"{}}\newline
+Include dependency graph for main.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+ulong \mbox{\hyperlink{main_8cpp_a954b0ce4cf53709f565abeb2dbada1b1}{get\+Min\+Col}} (\mbox{\hyperlink{class_matrix}{Matrix}} \&coefficients, \mbox{\hyperlink{class_matrix}{Matrix}} \&A, \mbox{\hyperlink{class_matrix}{Matrix}} \&B, \mbox{\hyperlink{class_matrix}{Matrix}} \&Z)
+\begin{DoxyCompactList}\small\item\em Computes (Zj-\/\+Cj) \end{DoxyCompactList}\item 
+ulong \mbox{\hyperlink{main_8cpp_a72984fa913d2c622ad77d16e82c7eba1}{get\+Min\+Row}} (\mbox{\hyperlink{class_matrix}{Matrix}} \&coefficients, \mbox{\hyperlink{class_matrix}{Matrix}} \&A, \mbox{\hyperlink{class_matrix}{Matrix}} \&B, \mbox{\hyperlink{class_matrix}{Matrix}} \&ratio, ulong min\+Col)
+\begin{DoxyCompactList}\small\item\em computes the ratios if divisor non-\/zero \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a30729af4a8d2541b77a1efb13f06ab4b}{simplex}} (\mbox{\hyperlink{class_matrix}{Matrix}} \&coefficients, \mbox{\hyperlink{class_matrix}{Matrix}} \&A, \mbox{\hyperlink{class_matrix}{Matrix}} \&B)
+\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a954b0ce4cf53709f565abeb2dbada1b1}\label{main_8cpp_a954b0ce4cf53709f565abeb2dbada1b1}} 
+\index{main.cpp@{main.cpp}!getMinCol@{getMinCol}}
+\index{getMinCol@{getMinCol}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{getMinCol()}{getMinCol()}}
+{\footnotesize\ttfamily ulong get\+Min\+Col (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{coefficients,  }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{A,  }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{B,  }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{Z }\end{DoxyParamCaption})}
+
+
+
+Computes (Zj-\/\+Cj) 
+
+\begin{DoxyReturn}{Returns}
+min value index + 1 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{main_8cpp_a954b0ce4cf53709f565abeb2dbada1b1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{main_8cpp_a954b0ce4cf53709f565abeb2dbada1b1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_a72984fa913d2c622ad77d16e82c7eba1}\label{main_8cpp_a72984fa913d2c622ad77d16e82c7eba1}} 
+\index{main.cpp@{main.cpp}!getMinRow@{getMinRow}}
+\index{getMinRow@{getMinRow}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{getMinRow()}{getMinRow()}}
+{\footnotesize\ttfamily ulong get\+Min\+Row (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{coefficients,  }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{A,  }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{B,  }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{ratio,  }\item[{ulong}]{min\+Col }\end{DoxyParamCaption})}
+
+
+
+computes the ratios if divisor non-\/zero 
+
+\begin{DoxyReturn}{Returns}
+min ratio index 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{main_8cpp_a72984fa913d2c622ad77d16e82c7eba1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{main_8cpp_a72984fa913d2c622ad77d16e82c7eba1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_a30729af4a8d2541b77a1efb13f06ab4b}\label{main_8cpp_a30729af4a8d2541b77a1efb13f06ab4b}} 
+\index{main.cpp@{main.cpp}!simplex@{simplex}}
+\index{simplex@{simplex}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{simplex()}{simplex()}}
+{\footnotesize\ttfamily void simplex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{coefficients,  }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{A,  }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{B }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp_a30729af4a8d2541b77a1efb13f06ab4b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{main_8cpp_a30729af4a8d2541b77a1efb13f06ab4b_icgraph}
+\end{center}
+\end{figure}

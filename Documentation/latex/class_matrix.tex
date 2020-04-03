@@ -1,0 +1,795 @@
+\hypertarget{class_matrix}{}\doxysection{Matrix Class Reference}
+\label{class_matrix}\index{Matrix@{Matrix}}
+
+
+{\ttfamily \#include $<$matrix.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_matrix_a2dba13c45127354c9f75ef576f49269b}{Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_matrix_a94a41d49036913ef1079b991671c466b}{Matrix}} (ulong rows, ulong cols)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_matrix_a8dfd061dab16646bfc4777f527e83cd3}{Matrix}} (const \mbox{\hyperlink{class_matrix}{Matrix}} \&matrix\+To\+Be\+Copied)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_matrix_a9b1c3627f573d78a2f08623fdfef990f}{$\sim$\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+ulong \mbox{\hyperlink{class_matrix_a91d06e05f67ae27c4c93f1c510d35f10}{get\+Rows}} ()
+\begin{DoxyCompactList}\small\item\em Getter for member rows. \end{DoxyCompactList}\item 
+ulong \mbox{\hyperlink{class_matrix_ae1ce0934b2da4132b445aeaadc8424a7}{get\+Cols}} ()
+\begin{DoxyCompactList}\small\item\em Getter for member cols. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_matrix_a19d41b05a82e7a33d3d2d72304305668}{exists}} () const
+\begin{DoxyCompactList}\small\item\em Checks whether the matrix exists. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_matrix_a220da8c4049cf5c1ba74ca9bed549604}{display\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Display the matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_matrix_aa50afbb6777e63fff185d5caafc7fe1b}{generate\+Random\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Assigns random values to the matrix if exists. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_matrix_a861d3ca01d000cb02a665f64043f2f28}{read\+Matrix\+From\+File}} (const string \&fname)
+\begin{DoxyCompactList}\small\item\em Reads a matrix from a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_matrix_a7ec24574c1f9917db0c502852858bd8c}{write\+Matrix\+To\+File}} (const string \&fname)
+\begin{DoxyCompactList}\small\item\em Writes the matrix to the file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& \mbox{\hyperlink{class_matrix_a79caf9b4357d78a2efb3d2263a305e87}{operator=}} (const \mbox{\hyperlink{class_matrix}{Matrix}} \&matrix\+To\+Be\+Assigned)
+\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_aa99fdeb38bde70ae8e6b41ee9ee052df}{operator+}} (const \mbox{\hyperlink{class_matrix}{Matrix}} \&matrix\+To\+Be\+Added) const
+\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_a53bc5d4ae6a7b327d36eaaa820a3eb0a}{operator-\/}} (const \mbox{\hyperlink{class_matrix}{Matrix}} \&matrix\+To\+Be\+Subtracted) const
+\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_a662b9a90c4bd26115df878eafd8965b9}{operator$\ast$}} (double scalar) const
+\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_ac201742c222a0c98b16329fcebc47aa1}{operator$\ast$}} (const \mbox{\hyperlink{class_matrix}{Matrix}} \&matrix\+To\+Be\+Multiplied) const
+\item 
+bool \mbox{\hyperlink{class_matrix_acf5f93080de2ecac0c4a6052dbafbc78}{is\+Square\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Checks whether the matrix is a square matrix. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_matrix_ab9422d99da389c39c1503410efaa3077}{is\+Identity\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Checks whether the matrix is an identity matrix. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_matrix_a9a14136c2acb9194fea3a01912939639}{is\+Symmetric\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Checks whether the matrix is a symmetric matrix. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_matrix_acb97e2caf99842b5000773167cd184b7}{is\+Null\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Checks whether the matrix is a N\+U\+LL matrix. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_matrix_a26798c6e9c27e072688a853c360b9e01}{is\+Diagonal\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Checks whether the matrix is a diagonal matrix. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_matrix_aaead6baf899cbf8805648ce0996d3fe7}{is\+Diagonally\+Dominant}} () const
+\begin{DoxyCompactList}\small\item\em Checks whether the matrix is diagonally dominant. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_matrix_a582c41ab9a161017f8709ddd1781ca60}{is\+Orthogonal}} () const
+\begin{DoxyCompactList}\small\item\em Checks whether the matrix is orthogonal. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_matrix_a6d6c75af75f2a950f0472da5f08cfa57}{trace\+Of\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Calculates the trace of the matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_a759661b75b9681f3a89ff75e27933b3a}{transpose}} () const
+\begin{DoxyCompactList}\small\item\em Gives the transpose of a given matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_matrix_ae8f7c97b3b75c33536a130159a5d1c19}{interchange\+Rows}} (ulong r1, ulong r2)
+\begin{DoxyCompactList}\small\item\em swap two rows. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_matrix_a0be93dbd3f7ffe66f7d823c10fdc429c}{pivot\+Matrix}} (ulong row\+To\+Be\+Interchanged)
+\begin{DoxyCompactList}\small\item\em Interchange the rows of the calling matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_abbf4eadc4ff42dd12891d825725218a0}{back\+Substitution}} () const
+\begin{DoxyCompactList}\small\item\em Solves a given matrix to find the solution by back substitution. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_ae8fb88158cd40c6bbd777500326d63d2}{triangular\+Factorization\+Crouts}} ()
+\begin{DoxyCompactList}\small\item\em Factorizes a given matrix into product of Lower and Upper triangular matrices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_a1dda6b86a7b258ad14472f15d2df1677}{solve\+Triangular\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Solves the given system of linear equations using LU decomposition/\+Triangular Factorization. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_ac0dc151ef1450daf3fa6f264d825ffc7}{gaussian\+Elimination}} () const
+\begin{DoxyCompactList}\small\item\em Solves the given system of linear equations using gaussian elimination. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_a2faf640e6f0d50474687e7b802d6eef4}{gauss\+Seidel}} () const
+\begin{DoxyCompactList}\small\item\em Solves the given system of linear equations using Gauss Seidel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_a34b8196323359ffd42a9a6408755ecb6}{gauss\+Jacobi}} () const
+\begin{DoxyCompactList}\small\item\em Solves the given system of linear equations using Gauss Jacobi. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_matrix_ad013bb781fb6e59f89799ae31a44527a}{operator==}} (const \mbox{\hyperlink{class_matrix}{Matrix}} \&rop) const
+\begin{DoxyCompactList}\small\item\em Compares given matrices. \end{DoxyCompactList}\item 
+double $\ast$\& \mbox{\hyperlink{class_matrix_a81d3f8f98c759f42d3887bb93a23a4c2}{operator\mbox{[}$\,$\mbox{]}}} (ulong index) const
+\begin{DoxyCompactList}\small\item\em Easier access to matrix elements. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_aa0d58c7d8c24b6d6b9960b7e7cc4a4df}{find\+\_\+zero}} () const
+\begin{DoxyCompactList}\small\item\em Computes all possible two minors and finds a zero in the \mbox{\hyperlink{class_matrix}{Matrix}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_a11f467113c3a4c65297e529cd3937b74}{augment\+Matrices}} (const \mbox{\hyperlink{class_matrix}{Matrix}} \&A, const \mbox{\hyperlink{class_matrix}{Matrix}} \&B)
+\begin{DoxyCompactList}\small\item\em Augments given matrices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A library to perform operations on matrices. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_matrix_a2dba13c45127354c9f75ef576f49269b}\label{class_matrix_a2dba13c45127354c9f75ef576f49269b}} 
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Matrix\+::\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Initialises values of rows and cols to 0. \mbox{\Hypertarget{class_matrix_a94a41d49036913ef1079b991671c466b}\label{class_matrix_a94a41d49036913ef1079b991671c466b}} 
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{ulong}]{rows,  }\item[{ulong}]{cols }\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor. 
+
+Memory is allocated to the member $\ast$$\ast$matrix pointer. The matrix elements are initialized to 0. 
+\begin{DoxyParams}{Parameters}
+{\em rows} & is of the type unsigned long, used to initialise the member rows. \\
+\hline
+{\em cols} & is of the type unsigned long, used to initialise the member cols. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_matrix_a8dfd061dab16646bfc4777f527e83cd3}\label{class_matrix_a8dfd061dab16646bfc4777f527e83cd3}} 
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_matrix}{Matrix}} \&}]{matrix\+To\+Be\+Copied }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+The contents of the object received in the argument list are copied to the current objects memory. 
+\begin{DoxyParams}{Parameters}
+{\em matrix\+To\+Be\+Copied} & is a reference to another object of the \mbox{\hyperlink{class_matrix}{Matrix}} class. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_matrix_a9b1c3627f573d78a2f08623fdfef990f}\label{class_matrix_a9b1c3627f573d78a2f08623fdfef990f}} 
+\index{Matrix@{Matrix}!````~Matrix@{$\sim$Matrix}}
+\index{````~Matrix@{$\sim$Matrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{$\sim$Matrix()}{~Matrix()}}
+{\footnotesize\ttfamily Matrix\+::$\sim$\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_matrix_abbf4eadc4ff42dd12891d825725218a0}\label{class_matrix_abbf4eadc4ff42dd12891d825725218a0}} 
+\index{Matrix@{Matrix}!backSubstitution@{backSubstitution}}
+\index{backSubstitution@{backSubstitution}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{backSubstitution()}{backSubstitution()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix}{Matrix}} Matrix\+::back\+Substitution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Solves a given matrix to find the solution by back substitution. 
+
+\begin{DoxyAttention}{Attention}
+The function assumes the matrix is an upper triangular matrix. 
+\end{DoxyAttention}
+\begin{DoxyReturn}{Returns}
+A solution matrix. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_abbf4eadc4ff42dd12891d825725218a0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_a220da8c4049cf5c1ba74ca9bed549604}\label{class_matrix_a220da8c4049cf5c1ba74ca9bed549604}} 
+\index{Matrix@{Matrix}!displayMatrix@{displayMatrix}}
+\index{displayMatrix@{displayMatrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{displayMatrix()}{displayMatrix()}}
+{\footnotesize\ttfamily void Matrix\+::display\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Display the matrix. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{class_matrix_a220da8c4049cf5c1ba74ca9bed549604_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_a19d41b05a82e7a33d3d2d72304305668}\label{class_matrix_a19d41b05a82e7a33d3d2d72304305668}} 
+\index{Matrix@{Matrix}!exists@{exists}}
+\index{exists@{exists}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{exists()}{exists()}}
+{\footnotesize\ttfamily bool Matrix\+::exists (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks whether the matrix exists. 
+
+\begin{DoxyReturn}{Returns}
+boolean value true if exists else false. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_matrix_a19d41b05a82e7a33d3d2d72304305668_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_aa0d58c7d8c24b6d6b9960b7e7cc4a4df}\label{class_matrix_aa0d58c7d8c24b6d6b9960b7e7cc4a4df}} 
+\index{Matrix@{Matrix}!find\_zero@{find\_zero}}
+\index{find\_zero@{find\_zero}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{find\_zero()}{find\_zero()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix}{Matrix}} Matrix\+::find\+\_\+zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Computes all possible two minors and finds a zero in the \mbox{\hyperlink{class_matrix}{Matrix}}. 
+
+\begin{DoxyReturn}{Returns}
+Position of the zero 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{class_matrix_aa0d58c7d8c24b6d6b9960b7e7cc4a4df_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_ac0dc151ef1450daf3fa6f264d825ffc7}\label{class_matrix_ac0dc151ef1450daf3fa6f264d825ffc7}} 
+\index{Matrix@{Matrix}!gaussianElimination@{gaussianElimination}}
+\index{gaussianElimination@{gaussianElimination}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{gaussianElimination()}{gaussianElimination()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix}{Matrix}} Matrix\+::gaussian\+Elimination (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Solves the given system of linear equations using gaussian elimination. 
+
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{class_matrix}{Matrix}} object (vector) containing the solution which satisfies the system. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_ac0dc151ef1450daf3fa6f264d825ffc7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_a34b8196323359ffd42a9a6408755ecb6}\label{class_matrix_a34b8196323359ffd42a9a6408755ecb6}} 
+\index{Matrix@{Matrix}!gaussJacobi@{gaussJacobi}}
+\index{gaussJacobi@{gaussJacobi}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{gaussJacobi()}{gaussJacobi()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix}{Matrix}} Matrix\+::gauss\+Jacobi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Solves the given system of linear equations using Gauss Jacobi. 
+
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{class_matrix}{Matrix}} object (vector) containing the solution which satisfies the system. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_a34b8196323359ffd42a9a6408755ecb6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_a2faf640e6f0d50474687e7b802d6eef4}\label{class_matrix_a2faf640e6f0d50474687e7b802d6eef4}} 
+\index{Matrix@{Matrix}!gaussSeidel@{gaussSeidel}}
+\index{gaussSeidel@{gaussSeidel}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{gaussSeidel()}{gaussSeidel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix}{Matrix}} Matrix\+::gauss\+Seidel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Solves the given system of linear equations using Gauss Seidel. 
+
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{class_matrix}{Matrix}} object (vector) containing the solution which satisfies the system. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_a2faf640e6f0d50474687e7b802d6eef4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_aa50afbb6777e63fff185d5caafc7fe1b}\label{class_matrix_aa50afbb6777e63fff185d5caafc7fe1b}} 
+\index{Matrix@{Matrix}!generateRandomMatrix@{generateRandomMatrix}}
+\index{generateRandomMatrix@{generateRandomMatrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{generateRandomMatrix()}{generateRandomMatrix()}}
+{\footnotesize\ttfamily void Matrix\+::generate\+Random\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Assigns random values to the matrix if exists. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_matrix_aa50afbb6777e63fff185d5caafc7fe1b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_ae1ce0934b2da4132b445aeaadc8424a7}\label{class_matrix_ae1ce0934b2da4132b445aeaadc8424a7}} 
+\index{Matrix@{Matrix}!getCols@{getCols}}
+\index{getCols@{getCols}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{getCols()}{getCols()}}
+{\footnotesize\ttfamily ulong Matrix\+::get\+Cols (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for member cols. 
+
+\begin{DoxyReturn}{Returns}
+Columns of the matrix. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_ae1ce0934b2da4132b445aeaadc8424a7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_a91d06e05f67ae27c4c93f1c510d35f10}\label{class_matrix_a91d06e05f67ae27c4c93f1c510d35f10}} 
+\index{Matrix@{Matrix}!getRows@{getRows}}
+\index{getRows@{getRows}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{getRows()}{getRows()}}
+{\footnotesize\ttfamily ulong Matrix\+::get\+Rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for member rows. 
+
+\begin{DoxyReturn}{Returns}
+Rows of the matrix. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_a91d06e05f67ae27c4c93f1c510d35f10_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_ae8f7c97b3b75c33536a130159a5d1c19}\label{class_matrix_ae8f7c97b3b75c33536a130159a5d1c19}} 
+\index{Matrix@{Matrix}!interchangeRows@{interchangeRows}}
+\index{interchangeRows@{interchangeRows}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{interchangeRows()}{interchangeRows()}}
+{\footnotesize\ttfamily void Matrix\+::interchange\+Rows (\begin{DoxyParamCaption}\item[{ulong}]{r1,  }\item[{ulong}]{r2 }\end{DoxyParamCaption})}
+
+
+
+swap two rows. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_ae8f7c97b3b75c33536a130159a5d1c19_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_aaead6baf899cbf8805648ce0996d3fe7}\label{class_matrix_aaead6baf899cbf8805648ce0996d3fe7}} 
+\index{Matrix@{Matrix}!isDiagonallyDominant@{isDiagonallyDominant}}
+\index{isDiagonallyDominant@{isDiagonallyDominant}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{isDiagonallyDominant()}{isDiagonallyDominant()}}
+{\footnotesize\ttfamily bool Matrix\+::is\+Diagonally\+Dominant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks whether the matrix is diagonally dominant. 
+
+\begin{DoxyReturn}{Returns}
+true if it is diagonally dominant else false. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_aaead6baf899cbf8805648ce0996d3fe7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_a26798c6e9c27e072688a853c360b9e01}\label{class_matrix_a26798c6e9c27e072688a853c360b9e01}} 
+\index{Matrix@{Matrix}!isDiagonalMatrix@{isDiagonalMatrix}}
+\index{isDiagonalMatrix@{isDiagonalMatrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{isDiagonalMatrix()}{isDiagonalMatrix()}}
+{\footnotesize\ttfamily bool Matrix\+::is\+Diagonal\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks whether the matrix is a diagonal matrix. 
+
+\begin{DoxyReturn}{Returns}
+true if diagonal matrix else false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_matrix_ab9422d99da389c39c1503410efaa3077}\label{class_matrix_ab9422d99da389c39c1503410efaa3077}} 
+\index{Matrix@{Matrix}!isIdentityMatrix@{isIdentityMatrix}}
+\index{isIdentityMatrix@{isIdentityMatrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{isIdentityMatrix()}{isIdentityMatrix()}}
+{\footnotesize\ttfamily bool Matrix\+::is\+Identity\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks whether the matrix is an identity matrix. 
+
+\begin{DoxyReturn}{Returns}
+true if identity else false. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{class_matrix_ab9422d99da389c39c1503410efaa3077_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_matrix_ab9422d99da389c39c1503410efaa3077_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_acb97e2caf99842b5000773167cd184b7}\label{class_matrix_acb97e2caf99842b5000773167cd184b7}} 
+\index{Matrix@{Matrix}!isNullMatrix@{isNullMatrix}}
+\index{isNullMatrix@{isNullMatrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{isNullMatrix()}{isNullMatrix()}}
+{\footnotesize\ttfamily bool Matrix\+::is\+Null\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks whether the matrix is a N\+U\+LL matrix. 
+
+\begin{DoxyReturn}{Returns}
+true if N\+U\+LL matrix else false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_matrix_a582c41ab9a161017f8709ddd1781ca60}\label{class_matrix_a582c41ab9a161017f8709ddd1781ca60}} 
+\index{Matrix@{Matrix}!isOrthogonal@{isOrthogonal}}
+\index{isOrthogonal@{isOrthogonal}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{isOrthogonal()}{isOrthogonal()}}
+{\footnotesize\ttfamily bool Matrix\+::is\+Orthogonal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks whether the matrix is orthogonal. 
+
+\begin{DoxyReturn}{Returns}
+true if orthoganal else false. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_a582c41ab9a161017f8709ddd1781ca60_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_acf5f93080de2ecac0c4a6052dbafbc78}\label{class_matrix_acf5f93080de2ecac0c4a6052dbafbc78}} 
+\index{Matrix@{Matrix}!isSquareMatrix@{isSquareMatrix}}
+\index{isSquareMatrix@{isSquareMatrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{isSquareMatrix()}{isSquareMatrix()}}
+{\footnotesize\ttfamily bool Matrix\+::is\+Square\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks whether the matrix is a square matrix. 
+
+\begin{DoxyReturn}{Returns}
+true if square matrix else false. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_acf5f93080de2ecac0c4a6052dbafbc78_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_a9a14136c2acb9194fea3a01912939639}\label{class_matrix_a9a14136c2acb9194fea3a01912939639}} 
+\index{Matrix@{Matrix}!isSymmetricMatrix@{isSymmetricMatrix}}
+\index{isSymmetricMatrix@{isSymmetricMatrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{isSymmetricMatrix()}{isSymmetricMatrix()}}
+{\footnotesize\ttfamily bool Matrix\+::is\+Symmetric\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks whether the matrix is a symmetric matrix. 
+
+\begin{DoxyReturn}{Returns}
+true if symmetric matrix else false. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_a9a14136c2acb9194fea3a01912939639_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_ac201742c222a0c98b16329fcebc47aa1}\label{class_matrix_ac201742c222a0c98b16329fcebc47aa1}} 
+\index{Matrix@{Matrix}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix}{Matrix}} Matrix\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_matrix}{Matrix}} \&}]{matrix\+To\+Be\+Multiplied }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_matrix_a662b9a90c4bd26115df878eafd8965b9}\label{class_matrix_a662b9a90c4bd26115df878eafd8965b9}} 
+\index{Matrix@{Matrix}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix}{Matrix}} Matrix\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{double}]{scalar }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_matrix_aa99fdeb38bde70ae8e6b41ee9ee052df}\label{class_matrix_aa99fdeb38bde70ae8e6b41ee9ee052df}} 
+\index{Matrix@{Matrix}!operator+@{operator+}}
+\index{operator+@{operator+}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix}{Matrix}} Matrix\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_matrix}{Matrix}} \&}]{matrix\+To\+Be\+Added }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_matrix_a53bc5d4ae6a7b327d36eaaa820a3eb0a}\label{class_matrix_a53bc5d4ae6a7b327d36eaaa820a3eb0a}} 
+\index{Matrix@{Matrix}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix}{Matrix}} Matrix\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_matrix}{Matrix}} \&}]{matrix\+To\+Be\+Subtracted }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_matrix_a79caf9b4357d78a2efb3d2263a305e87}\label{class_matrix_a79caf9b4357d78a2efb3d2263a305e87}} 
+\index{Matrix@{Matrix}!operator=@{operator=}}
+\index{operator=@{operator=}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix}{Matrix}} \& Matrix\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_matrix}{Matrix}} \&}]{matrix\+To\+Be\+Assigned }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{class_matrix_a79caf9b4357d78a2efb3d2263a305e87_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_ad013bb781fb6e59f89799ae31a44527a}\label{class_matrix_ad013bb781fb6e59f89799ae31a44527a}} 
+\index{Matrix@{Matrix}!operator==@{operator==}}
+\index{operator==@{operator==}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Matrix\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_matrix}{Matrix}} \&}]{rop }\end{DoxyParamCaption}) const}
+
+
+
+Compares given matrices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rop} & is the right hand side matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if matrices are equivalent else false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_matrix_a81d3f8f98c759f42d3887bb93a23a4c2}\label{class_matrix_a81d3f8f98c759f42d3887bb93a23a4c2}} 
+\index{Matrix@{Matrix}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily double $\ast$\& Matrix\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{ulong}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Easier access to matrix elements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & is the row number i.\+e. the first parameter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to a pointer of a row 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_matrix_a0be93dbd3f7ffe66f7d823c10fdc429c}\label{class_matrix_a0be93dbd3f7ffe66f7d823c10fdc429c}} 
+\index{Matrix@{Matrix}!pivotMatrix@{pivotMatrix}}
+\index{pivotMatrix@{pivotMatrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{pivotMatrix()}{pivotMatrix()}}
+{\footnotesize\ttfamily void Matrix\+::pivot\+Matrix (\begin{DoxyParamCaption}\item[{ulong}]{row\+To\+Be\+Interchanged }\end{DoxyParamCaption})}
+
+
+
+Interchange the rows of the calling matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row\+To\+Be\+Interchanged} & is the row number which is to be replaced.\\
+\hline
+\end{DoxyParams}
+A row below the row\+To\+Be\+Interchanged is searched whose diagonal element for the row\+To\+Be\+Interchanged is non-\/zero and replaced with the row\+To\+Be\+Interchanged. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{class_matrix_a0be93dbd3f7ffe66f7d823c10fdc429c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_a0be93dbd3f7ffe66f7d823c10fdc429c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_a861d3ca01d000cb02a665f64043f2f28}\label{class_matrix_a861d3ca01d000cb02a665f64043f2f28}} 
+\index{Matrix@{Matrix}!readMatrixFromFile@{readMatrixFromFile}}
+\index{readMatrixFromFile@{readMatrixFromFile}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{readMatrixFromFile()}{readMatrixFromFile()}}
+{\footnotesize\ttfamily void Matrix\+::read\+Matrix\+From\+File (\begin{DoxyParamCaption}\item[{const string \&}]{fname }\end{DoxyParamCaption})}
+
+
+
+Reads a matrix from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & contains the file name from which the matrix is to be read. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{class_matrix_a861d3ca01d000cb02a665f64043f2f28_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_a1dda6b86a7b258ad14472f15d2df1677}\label{class_matrix_a1dda6b86a7b258ad14472f15d2df1677}} 
+\index{Matrix@{Matrix}!solveTriangularMatrix@{solveTriangularMatrix}}
+\index{solveTriangularMatrix@{solveTriangularMatrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{solveTriangularMatrix()}{solveTriangularMatrix()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix}{Matrix}} Matrix\+::solve\+Triangular\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Solves the given system of linear equations using LU decomposition/\+Triangular Factorization. 
+
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{class_matrix}{Matrix}} object (vector) containing the solution which satisfies the system. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_a1dda6b86a7b258ad14472f15d2df1677_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_a6d6c75af75f2a950f0472da5f08cfa57}\label{class_matrix_a6d6c75af75f2a950f0472da5f08cfa57}} 
+\index{Matrix@{Matrix}!traceOfMatrix@{traceOfMatrix}}
+\index{traceOfMatrix@{traceOfMatrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{traceOfMatrix()}{traceOfMatrix()}}
+{\footnotesize\ttfamily double Matrix\+::trace\+Of\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Calculates the trace of the matrix. 
+
+\begin{DoxyReturn}{Returns}
+Trace of the matrix. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_matrix_a6d6c75af75f2a950f0472da5f08cfa57_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_a759661b75b9681f3a89ff75e27933b3a}\label{class_matrix_a759661b75b9681f3a89ff75e27933b3a}} 
+\index{Matrix@{Matrix}!transpose@{transpose}}
+\index{transpose@{transpose}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{transpose()}{transpose()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix}{Matrix}} Matrix\+::transpose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gives the transpose of a given matrix. 
+
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{class_matrix}{Matrix}} object which is the transpose of the calling matrix. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{class_matrix_a759661b75b9681f3a89ff75e27933b3a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_ae8fb88158cd40c6bbd777500326d63d2}\label{class_matrix_ae8fb88158cd40c6bbd777500326d63d2}} 
+\index{Matrix@{Matrix}!triangularFactorizationCrouts@{triangularFactorizationCrouts}}
+\index{triangularFactorizationCrouts@{triangularFactorizationCrouts}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{triangularFactorizationCrouts()}{triangularFactorizationCrouts()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix}{Matrix}} Matrix\+::triangular\+Factorization\+Crouts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Factorizes a given matrix into product of Lower and Upper triangular matrices. 
+
+The diagonal elements of the lower triangular matrix are non-\/zero. The diagonal elements of the upper triangular matrix are \textquotesingle{}1\textquotesingle{}. \begin{DoxyReturn}{Returns}
+An augmented matrix whose Upper triangular elements is the upper triangular matrix and the diagonals are \textquotesingle{}1\textquotesingle{} and Lower triangular elements is the lower triangular matrix including the diagonal elements. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_ae8fb88158cd40c6bbd777500326d63d2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_ae8fb88158cd40c6bbd777500326d63d2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_matrix_a7ec24574c1f9917db0c502852858bd8c}\label{class_matrix_a7ec24574c1f9917db0c502852858bd8c}} 
+\index{Matrix@{Matrix}!writeMatrixToFile@{writeMatrixToFile}}
+\index{writeMatrixToFile@{writeMatrixToFile}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{writeMatrixToFile()}{writeMatrixToFile()}}
+{\footnotesize\ttfamily void Matrix\+::write\+Matrix\+To\+File (\begin{DoxyParamCaption}\item[{const string \&}]{fname }\end{DoxyParamCaption})}
+
+
+
+Writes the matrix to the file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & contains the file name to which the matrix is to be written. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{class_matrix_a7ec24574c1f9917db0c502852858bd8c_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_matrix_a11f467113c3a4c65297e529cd3937b74}\label{class_matrix_a11f467113c3a4c65297e529cd3937b74}} 
+\index{Matrix@{Matrix}!augmentMatrices@{augmentMatrices}}
+\index{augmentMatrices@{augmentMatrices}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{augmentMatrices}{augmentMatrices}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix}{Matrix}} augment\+Matrices (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_matrix}{Matrix}} \&}]{A,  }\item[{const \mbox{\hyperlink{class_matrix}{Matrix}} \&}]{B }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Augments given matrices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & is a reference to the coefficient matrix \\
+\hline
+{\em B} & is a reference to the constant matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An augmented matrix. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix_8hpp}{matrix.\+hpp}}\item 
+\mbox{\hyperlink{additional_information_8cpp}{additional\+Information.\+cpp}}\item 
+\mbox{\hyperlink{arithmetic_operations_8cpp}{arithmetic\+Operations.\+cpp}}\item 
+\mbox{\hyperlink{bool_functions_8cpp}{bool\+Functions.\+cpp}}\item 
+\mbox{\hyperlink{file_operations_8cpp}{file\+Operations.\+cpp}}\item 
+\mbox{\hyperlink{find__zero_8cpp}{find\+\_\+zero.\+cpp}}\item 
+\mbox{\hyperlink{gaussian_elimination_8cpp}{gaussian\+Elimination.\+cpp}}\item 
+\mbox{\hyperlink{gauss_jacobi_8cpp}{gauss\+Jacobi.\+cpp}}\item 
+\mbox{\hyperlink{gauss_seidel_8cpp}{gauss\+Seidel.\+cpp}}\item 
+\mbox{\hyperlink{matrix_8cpp}{matrix.\+cpp}}\item 
+\mbox{\hyperlink{matrix_transformations_8cpp}{matrix\+Transformations.\+cpp}}\item 
+\mbox{\hyperlink{operator_overloading_8cpp}{operator\+Overloading.\+cpp}}\item 
+\mbox{\hyperlink{solve_system_8cpp}{solve\+System.\+cpp}}\item 
+\mbox{\hyperlink{triangular_factorization_8cpp}{triangular\+Factorization.\+cpp}}\end{DoxyCompactItemize}

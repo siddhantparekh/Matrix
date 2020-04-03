@@ -1,0 +1,4 @@
+<map id="Matrix::transpose" name="Matrix::transpose">
+<area shape="rect" id="node1" title="Gives the transpose of a given matrix." alt="" coords="192,5,315,32"/>
+<area shape="rect" id="node2" href="$class_matrix.html#a582c41ab9a161017f8709ddd1781ca60" title="Checks whether the matrix is orthogonal." alt="" coords="5,5,144,32"/>
+</map>

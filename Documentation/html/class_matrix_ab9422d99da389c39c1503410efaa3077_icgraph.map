@@ -1,0 +1,4 @@
+<map id="Matrix::isIdentityMatrix" name="Matrix::isIdentityMatrix">
+<area shape="rect" id="node1" title="Checks whether the matrix is an identity matrix." alt="" coords="192,5,347,32"/>
+<area shape="rect" id="node2" href="$class_matrix.html#a582c41ab9a161017f8709ddd1781ca60" title="Checks whether the matrix is orthogonal." alt="" coords="5,5,144,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Matrix::gaussJacobi" name="Matrix::gaussJacobi">
+<area shape="rect" id="node1" title="Solves the given system of linear equations using Gauss Jacobi." alt="" coords="5,5,144,32"/>
+<area shape="rect" id="node2" href="$class_matrix.html#aaead6baf899cbf8805648ce0996d3fe7" title="Checks whether the matrix is diagonally dominant." alt="" coords="192,5,385,32"/>
+</map>

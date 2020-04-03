@@ -1,0 +1,7 @@
+<map id="Matrix::solveTriangularMatrix" name="Matrix::solveTriangularMatrix">
+<area shape="rect" id="node1" title="Solves the given system of linear equations using LU decomposition/Triangular Factorization." alt="" coords="5,35,196,61"/>
+<area shape="rect" id="node2" href="$class_matrix.html#abbf4eadc4ff42dd12891d825725218a0" title="Solves a given matrix to find the solution by back substitution." alt="" coords="260,5,423,32"/>
+<area shape="rect" id="node3" href="$class_matrix.html#ae8fb88158cd40c6bbd777500326d63d2" title="Factorizes a given matrix into product of Lower and Upper triangular matrices." alt="" coords="244,57,439,98"/>
+<area shape="rect" id="node4" href="$class_matrix.html#a0be93dbd3f7ffe66f7d823c10fdc429c" title="Interchange the rows of the calling matrix." alt="" coords="487,64,617,91"/>
+<area shape="rect" id="node5" href="$class_matrix.html#ae8f7c97b3b75c33536a130159a5d1c19" title="swap two rows." alt="" coords="665,64,832,91"/>
+</map>

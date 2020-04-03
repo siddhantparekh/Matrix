@@ -1,0 +1,4 @@
+<map id="Matrix::generateRandomMatrix" name="Matrix::generateRandomMatrix">
+<area shape="rect" id="node1" title="Assigns random values to the matrix if exists." alt="" coords="5,5,207,32"/>
+<area shape="rect" id="node2" href="$class_matrix.html#a19d41b05a82e7a33d3d2d72304305668" title="Checks whether the matrix exists." alt="" coords="255,5,356,32"/>
+</map>
